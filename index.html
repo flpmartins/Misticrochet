@@ -91,7 +91,7 @@
                     <div class="produto-content">
                         <h3 class="produto-title">Amigurumis Místicos</h3>
                         <p class="produto-description">Bichinhos de crochê encantadores, perfeitos para decorar e presentear</p>
-                        <span class="produto-price">A partir de R$ 45,00</span>
+                        <span class="produto-price">Sob consulta</span>
                     </div>
                 </article>
 
@@ -102,7 +102,7 @@
                     <div class="produto-content">
                         <h3 class="produto-title">Acessórios Delicados</h3>
                         <p class="produto-description">Bolsinhas, chaveiros e outros acessórios feitos com fios especiais</p>
-                        <span class="produto-price">A partir de R$ 30,00</span>
+                        <span class="produto-price">Sob consulta</span>
                     </div>
                 </article>
 
@@ -548,7 +548,8 @@
                 emailjsConfig.TEMPLATE_ID === 'YOUR_TEMPLATE_ID') {
                 
                 // EmailJS não configurado - usar fallback (mailto)
-                const mailtoLink = `mailto:${EMAILJS_CONFIG.TO_EMAIL}?subject=Contato via Site - ${encodeURIComponent(formData.nome)}&body=${encodeURIComponent('Nome: ' + formData.nome + '\n\nEmail: ' + formData.email + '\n\nMensagem:\n' + formData.mensagem)}`;
+                const toEmail = emailjsConfig ? emailjsConfig.TO_EMAIL : 'misticrochet47@gmail.com';
+                const mailtoLink = `mailto:${toEmail}?subject=Contato via Site - ${encodeURIComponent(formData.nome)}&body=${encodeURIComponent('Nome: ' + formData.nome + '\n\nEmail: ' + formData.email + '\n\nMensagem:\n' + formData.mensagem)}`;
                 window.location.href = mailtoLink;
                 
                 // Mostrar dialog de agradecimento
@@ -644,7 +645,9 @@
                 const useMailto = confirm(errorMessage);
                 
                 if (useMailto) {
-                    const mailtoLink = `mailto:${EMAILJS_CONFIG.TO_EMAIL}?subject=Contato via Site - ${encodeURIComponent(formData.nome)}&body=${encodeURIComponent('Nome: ' + formData.nome + '\n\nEmail: ' + formData.email + '\n\nMensagem:\n' + formData.mensagem)}`;
+                    const emailjsConfig = typeof EMAILJS_CONFIG !== 'undefined' ? EMAILJS_CONFIG : window.EMAILJS_CONFIG;
+                    const toEmail = emailjsConfig ? emailjsConfig.TO_EMAIL : 'misticrochet47@gmail.com';
+                    const mailtoLink = `mailto:${toEmail}?subject=Contato via Site - ${encodeURIComponent(formData.nome)}&body=${encodeURIComponent('Nome: ' + formData.nome + '\n\nEmail: ' + formData.email + '\n\nMensagem:\n' + formData.mensagem)}`;
                     window.location.href = mailtoLink;
                 }
             } finally {
