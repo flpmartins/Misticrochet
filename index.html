@@ -25,6 +25,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // Aguardar EmailJS carregar completamente
+        window.addEventListener('DOMContentLoaded', function() {
+            if (typeof emailjs !== 'undefined') {
+                console.log('EmailJS carregado com sucesso');
+            }
+        });
+    </script>
     <script src="config.js"></script>
 </head>
 <body>
@@ -220,7 +228,7 @@
                     </div>
                 </div>
 
-                <form class="contato-form" action="#" method="POST" aria-label="Formulário de contato">
+                <form class="contato-form" method="POST" aria-label="Formulário de contato">
                     <div class="form-group">
                         <label for="nome" class="form-label">Nome</label>
                         <input 
@@ -407,26 +415,48 @@
         const thankYouOverlay = document.getElementById('thankYouOverlay');
         const thankYouClose = document.getElementById('thankYouClose');
 
-        function openThankYouDialog() {
-            thankYouDialog.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            // Focar no botão de fechar para acessibilidade
-            setTimeout(() => thankYouClose.focus(), 100);
-        }
+        // Declarar funções globalmente para serem acessíveis
+        let openThankYouDialog, closeThankYouDialog;
+        
+        if (thankYouDialog && thankYouOverlay && thankYouClose) {
+            openThankYouDialog = function() {
+                thankYouDialog.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                // Focar no botão de fechar para acessibilidade
+                setTimeout(() => thankYouClose.focus(), 100);
+            };
 
-        function closeThankYouDialog() {
-            thankYouDialog.classList.remove('active');
-            document.body.style.overflow = '';
+            closeThankYouDialog = function() {
+                thankYouDialog.classList.remove('active');
+                document.body.style.overflow = '';
+            };
+            
+            // Fechar dialog ao clicar no overlay, botão ou tecla ESC
+            thankYouOverlay.addEventListener('click', closeThankYouDialog);
+            thankYouClose.addEventListener('click', closeThankYouDialog);
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && thankYouDialog.classList.contains('active')) {
+                    closeThankYouDialog();
+                }
+            });
+        } else {
+            console.error('Elementos do dialog de agradecimento não encontrados!');
+            // Criar funções vazias para evitar erros
+            openThankYouDialog = function() { console.warn('Dialog não disponível'); };
+            closeThankYouDialog = function() { console.warn('Dialog não disponível'); };
         }
 
         // Configuração do EmailJS está no arquivo config.js
         // As credenciais são carregadas de config.js para não ficarem expostas no código principal
         
         // Verificar se EMAILJS_CONFIG foi carregado do config.js
+        // O config.js declara EMAILJS_CONFIG como const, então não podemos redeclarar
+        // Apenas verificamos se existe e criamos um fallback se necessário
         if (typeof EMAILJS_CONFIG === 'undefined') {
             console.error('Erro: config.js não foi carregado. Verifique se o arquivo existe.');
-            // Criar objeto vazio para evitar erros
-            var EMAILJS_CONFIG = {
+            // Criar objeto padrão no window para evitar erros
+            window.EMAILJS_CONFIG = {
                 PUBLIC_KEY: 'YOUR_PUBLIC_KEY',
                 SERVICE_ID: 'YOUR_SERVICE_ID',
                 TEMPLATE_ID: 'YOUR_TEMPLATE_ID',
@@ -434,22 +464,73 @@
             };
         }
         
+        // Usar a variável global (do config.js ou do fallback)
+        // Não redeclarar, apenas referenciar
+        const emailjsConfig = typeof EMAILJS_CONFIG !== 'undefined' ? EMAILJS_CONFIG : window.EMAILJS_CONFIG;
+        
         // Inicializar EmailJS apenas se a chave pública estiver configurada
-        if (EMAILJS_CONFIG.PUBLIC_KEY && EMAILJS_CONFIG.PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
-            emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+        // Aguardar o EmailJS estar totalmente carregado
+        let emailjsReady = false;
+        
+        // Função para inicializar EmailJS
+        function initializeEmailJS() {
+            const config = typeof EMAILJS_CONFIG !== 'undefined' ? EMAILJS_CONFIG : window.EMAILJS_CONFIG;
+            if (config && config.PUBLIC_KEY && config.PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+                try {
+                    if (typeof emailjs !== 'undefined') {
+                        // Na versão 4 do EmailJS, a inicialização pode ser feita assim
+                        emailjs.init(config.PUBLIC_KEY);
+                        emailjsReady = true;
+                        console.log('EmailJS inicializado com sucesso. Public Key:', config.PUBLIC_KEY.substring(0, 5) + '...');
+                    } else {
+                        console.error('EmailJS não foi carregado. Verifique se o script está incluído.');
+                    }
+                } catch (error) {
+                    console.error('Erro ao inicializar EmailJS:', error);
+                }
+            } else {
+                console.warn('EmailJS não configurado. Public Key não encontrada.');
+            }
+        }
+        
+        // Tentar inicializar quando o DOM estiver pronto
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeEmailJS);
+        } else {
+            // DOM já está pronto
+            setTimeout(initializeEmailJS, 100); // Pequeno delay para garantir que o script carregou
         }
 
         // Validação e envio do formulário
-        const contatoForm = document.querySelector('.contato-form');
-        const submitButton = contatoForm.querySelector('.btn-submit');
-        
-        contatoForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
+        // Garantir que o formulário existe antes de anexar o evento
+        function setupFormHandler() {
+            const contatoForm = document.querySelector('.contato-form');
             
-            // Desabilitar botão durante o envio
-            const originalButtonText = submitButton.textContent;
-            submitButton.disabled = true;
-            submitButton.textContent = 'Enviando...';
+            if (!contatoForm) {
+                console.error('Formulário não encontrado!');
+                return;
+            }
+            
+            const submitButton = contatoForm.querySelector('.btn-submit');
+            
+            // Remover event listener anterior se existir (para evitar duplicatas)
+            const newForm = contatoForm.cloneNode(true);
+            contatoForm.parentNode.replaceChild(newForm, contatoForm);
+            
+            // Anexar evento ao novo formulário
+            const form = document.querySelector('.contato-form');
+            const btn = form.querySelector('.btn-submit');
+            
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                console.log('Formulário submetido - prevenindo comportamento padrão');
+                
+                // Desabilitar botão durante o envio
+                const originalButtonText = btn.textContent;
+                btn.disabled = true;
+                btn.textContent = 'Enviando...';
             
             // Coletar dados do formulário
             const formData = {
@@ -458,10 +539,13 @@
                 mensagem: document.getElementById('mensagem').value.trim()
             };
             
+            // Obter configuração do EmailJS (do config.js ou fallback)
+            const emailjsConfig = typeof EMAILJS_CONFIG !== 'undefined' ? EMAILJS_CONFIG : window.EMAILJS_CONFIG;
+            
             // Verificar se EmailJS está configurado
-            if (EMAILJS_CONFIG.PUBLIC_KEY === 'YOUR_PUBLIC_KEY' || 
-                EMAILJS_CONFIG.SERVICE_ID === 'YOUR_SERVICE_ID' || 
-                EMAILJS_CONFIG.TEMPLATE_ID === 'YOUR_TEMPLATE_ID') {
+            if (!emailjsConfig || emailjsConfig.PUBLIC_KEY === 'YOUR_PUBLIC_KEY' || 
+                emailjsConfig.SERVICE_ID === 'YOUR_SERVICE_ID' || 
+                emailjsConfig.TEMPLATE_ID === 'YOUR_TEMPLATE_ID') {
                 
                 // EmailJS não configurado - usar fallback (mailto)
                 const mailtoLink = `mailto:${EMAILJS_CONFIG.TO_EMAIL}?subject=Contato via Site - ${encodeURIComponent(formData.nome)}&body=${encodeURIComponent('Nome: ' + formData.nome + '\n\nEmail: ' + formData.email + '\n\nMensagem:\n' + formData.mensagem)}`;
@@ -470,46 +554,94 @@
                 // Mostrar dialog de agradecimento
                 setTimeout(() => {
                     openThankYouDialog();
-                    contatoForm.reset();
-                    submitButton.disabled = false;
-                    submitButton.textContent = originalButtonText;
+                    form.reset();
+                    btn.disabled = false;
+                    btn.textContent = originalButtonText;
                 }, 500);
                 
                 return;
             }
             
             try {
+                // Verificar se EmailJS está pronto
+                if (!emailjsReady || typeof emailjs === 'undefined') {
+                    throw new Error('EmailJS não está inicializado. Verifique a configuração.');
+                }
+                
                 // Formatar mensagem completa com nome e email incluídos automaticamente
                 // O nome e email serão adicionados no início da mensagem sem o cliente saber
                 const mensagemCompleta = `Olá! Meu nome é ${formData.nome} e meu email é ${formData.email}.\n\n${formData.mensagem}`;
                 
+                // Obter configuração do EmailJS
+                const emailjsConfig = typeof EMAILJS_CONFIG !== 'undefined' ? EMAILJS_CONFIG : window.EMAILJS_CONFIG;
+                
+                // Verificar se as credenciais estão configuradas
+                if (!emailjsConfig || !emailjsConfig.SERVICE_ID || !emailjsConfig.TEMPLATE_ID || 
+                    emailjsConfig.SERVICE_ID === 'YOUR_SERVICE_ID' || 
+                    emailjsConfig.TEMPLATE_ID === 'YOUR_TEMPLATE_ID') {
+                    throw new Error('Credenciais do EmailJS não configuradas corretamente.');
+                }
+                
                 // Enviar email usando EmailJS
                 // O EmailJS enviará um email para misticrochet47@gmail.com
                 // com os dados do formulário (nome e email já incluídos na mensagem)
-                await emailjs.send(
-                    EMAILJS_CONFIG.SERVICE_ID,
-                    EMAILJS_CONFIG.TEMPLATE_ID,
-                    {
-                        from_name: formData.nome,
-                        from_email: formData.email,
-                        message: mensagemCompleta,  // Mensagem com nome e email incluídos automaticamente
-                        to_email: EMAILJS_CONFIG.TO_EMAIL,
-                        reply_to: formData.email
-                    }
+                
+                // Preparar parâmetros do template
+                const templateParams = {
+                    from_name: formData.nome,
+                    from_email: formData.email,
+                    message: mensagemCompleta,  // Mensagem com nome e email incluídos automaticamente
+                    to_email: emailjsConfig.TO_EMAIL,
+                    reply_to: formData.email
+                };
+                
+                console.log('Enviando email com parâmetros:', {
+                    service: emailjsConfig.SERVICE_ID,
+                    template: emailjsConfig.TEMPLATE_ID,
+                    params: templateParams
+                });
+                
+                // Usar o método correto do EmailJS v4
+                const response = await emailjs.send(
+                    emailjsConfig.SERVICE_ID,
+                    emailjsConfig.TEMPLATE_ID,
+                    templateParams
                 );
+                
+                console.log('Email enviado com sucesso:', response);
                 
                 // Sucesso - mostrar dialog de agradecimento
                 openThankYouDialog();
-                contatoForm.reset();
+                form.reset();
                 
             } catch (error) {
                 console.error('Erro ao enviar email:', error);
+                console.error('Detalhes do erro:', {
+                    status: error.status,
+                    text: error.text,
+                    message: error.message
+                });
+                
+                // Mensagem de erro mais específica
+                let errorMessage = 'Ops! Ocorreu um erro ao enviar sua mensagem.\n\n';
+                
+                if (error.status === 405) {
+                    errorMessage += 'Erro 405: Método não permitido.\n';
+                    errorMessage += 'Verifique se o EmailJS está configurado corretamente.\n\n';
+                } else if (error.status === 400) {
+                    errorMessage += 'Erro 400: Requisição inválida.\n';
+                    errorMessage += 'Verifique se o template está configurado corretamente.\n\n';
+                } else if (error.status === 401) {
+                    errorMessage += 'Erro 401: Não autorizado.\n';
+                    errorMessage += 'Verifique se a chave pública está correta.\n\n';
+                } else {
+                    errorMessage += `Erro: ${error.message || 'Erro desconhecido'}\n\n`;
+                }
+                
+                errorMessage += 'Deseja abrir seu cliente de email para enviar manualmente?';
                 
                 // Em caso de erro, oferecer alternativa
-                const useMailto = confirm(
-                    'Ops! Ocorreu um erro ao enviar sua mensagem.\n\n' +
-                    'Deseja abrir seu cliente de email para enviar manualmente?'
-                );
+                const useMailto = confirm(errorMessage);
                 
                 if (useMailto) {
                     const mailtoLink = `mailto:${EMAILJS_CONFIG.TO_EMAIL}?subject=Contato via Site - ${encodeURIComponent(formData.nome)}&body=${encodeURIComponent('Nome: ' + formData.nome + '\n\nEmail: ' + formData.email + '\n\nMensagem:\n' + formData.mensagem)}`;
@@ -517,67 +649,71 @@
                 }
             } finally {
                 // Reabilitar botão
-                submitButton.disabled = false;
-                submitButton.textContent = originalButtonText;
+                btn.disabled = false;
+                btn.textContent = originalButtonText;
             }
-        });
-
-        // Fechar dialog ao clicar no overlay, botão ou tecla ESC
-        thankYouOverlay.addEventListener('click', closeThankYouDialog);
-        thankYouClose.addEventListener('click', closeThankYouDialog);
+            });
+        }
         
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && thankYouDialog.classList.contains('active')) {
-                closeThankYouDialog();
-            }
-        });
+        // Garantir que o formulário está pronto antes de configurar
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', setupFormHandler);
+        } else {
+            // DOM já está pronto
+            setupFormHandler();
+        }
 
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = themeToggle.querySelector('.theme-icon');
-        const html = document.documentElement;
-
-        // Verificar tema salvo ou preferência do sistema
-        const savedTheme = localStorage.getItem('theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-
-        // Aplicar tema inicial
-        if (initialTheme === 'dark') {
-            html.setAttribute('data-theme', 'dark');
-            themeIcon.textContent = '☀️';
+        
+        if (!themeToggle) {
+            console.error('Theme toggle não encontrado!');
         } else {
-            html.removeAttribute('data-theme');
-            themeIcon.textContent = '🌙';
-        }
+            const themeIcon = themeToggle.querySelector('.theme-icon');
+            const html = document.documentElement;
 
-        // Toggle de tema
-        themeToggle.addEventListener('click', function() {
-            const currentTheme = html.getAttribute('data-theme');
-            
-            if (currentTheme === 'dark') {
-                html.removeAttribute('data-theme');
-                themeIcon.textContent = '🌙';
-                localStorage.setItem('theme', 'light');
-            } else {
+            // Verificar tema salvo ou preferência do sistema
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+
+            // Aplicar tema inicial
+            if (initialTheme === 'dark') {
                 html.setAttribute('data-theme', 'dark');
                 themeIcon.textContent = '☀️';
-                localStorage.setItem('theme', 'dark');
+            } else {
+                html.removeAttribute('data-theme');
+                themeIcon.textContent = '🌙';
             }
-        });
 
-        // Escutar mudanças na preferência do sistema
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-            if (!localStorage.getItem('theme')) {
-                if (e.matches) {
-                    html.setAttribute('data-theme', 'dark');
-                    themeIcon.textContent = '☀️';
-                } else {
+            // Toggle de tema
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = html.getAttribute('data-theme');
+                
+                if (currentTheme === 'dark') {
                     html.removeAttribute('data-theme');
                     themeIcon.textContent = '🌙';
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    html.setAttribute('data-theme', 'dark');
+                    themeIcon.textContent = '☀️';
+                    localStorage.setItem('theme', 'dark');
                 }
-            }
-        });
+            });
+
+            // Escutar mudanças na preferência do sistema
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+                if (!localStorage.getItem('theme')) {
+                    if (e.matches) {
+                        html.setAttribute('data-theme', 'dark');
+                        themeIcon.textContent = '☀️';
+                    } else {
+                        html.removeAttribute('data-theme');
+                        themeIcon.textContent = '🌙';
+                    }
+                }
+            });
+        }
 
         // Modal de Imagens dos Produtos
         const imageModal = document.getElementById('imageModal');
@@ -587,52 +723,58 @@
         const modalContent = document.querySelector('.image-modal-content');
         const produtoImgs = document.querySelectorAll('.produto-img[data-image-modal]');
 
-        function openModal(imageSrc, imageAlt) {
-            modalImage.src = imageSrc;
-            modalImage.alt = imageAlt || 'Imagem ampliada do produto';
-            imageModal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Previne scroll do body
-            // Focar no botão de fechar para acessibilidade
-            setTimeout(() => modalClose.focus(), 100);
-        }
+        if (imageModal && modalImage && modalOverlay && modalClose) {
+            function openModal(imageSrc, imageAlt) {
+                modalImage.src = imageSrc;
+                modalImage.alt = imageAlt || 'Imagem ampliada do produto';
+                imageModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Previne scroll do body
+                // Focar no botão de fechar para acessibilidade
+                setTimeout(() => modalClose.focus(), 100);
+            }
 
-        function closeModal() {
-            imageModal.classList.remove('active');
-            document.body.style.overflow = ''; // Restaura scroll do body
-        }
+            function closeModal() {
+                imageModal.classList.remove('active');
+                document.body.style.overflow = ''; // Restaura scroll do body
+            }
 
-        // Adicionar evento de clique nas imagens dos produtos
-        produtoImgs.forEach(img => {
-            img.style.cursor = 'pointer';
-            img.setAttribute('role', 'button');
-            img.setAttribute('tabindex', '0');
-            img.addEventListener('click', function() {
-                openModal(this.getAttribute('data-image-modal'), this.getAttribute('alt'));
-            });
-            // Permitir abrir com Enter/Space
-            img.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
+            // Adicionar evento de clique nas imagens dos produtos
+            produtoImgs.forEach(img => {
+                img.style.cursor = 'pointer';
+                img.setAttribute('role', 'button');
+                img.setAttribute('tabindex', '0');
+                img.addEventListener('click', function() {
                     openModal(this.getAttribute('data-image-modal'), this.getAttribute('alt'));
+                });
+                // Permitir abrir com Enter/Space
+                img.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openModal(this.getAttribute('data-image-modal'), this.getAttribute('alt'));
+                    }
+                });
+            });
+
+            // Fechar modal ao clicar no overlay (mas não na imagem)
+            modalOverlay.addEventListener('click', closeModal);
+            modalClose.addEventListener('click', closeModal);
+            
+            // Prevenir fechar ao clicar na imagem ou no conteúdo
+            if (modalContent) {
+                modalContent.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            }
+            
+            // Fechar com tecla ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && imageModal.classList.contains('active')) {
+                    closeModal();
                 }
             });
-        });
-
-        // Fechar modal ao clicar no overlay (mas não na imagem)
-        modalOverlay.addEventListener('click', closeModal);
-        modalClose.addEventListener('click', closeModal);
-        
-        // Prevenir fechar ao clicar na imagem ou no conteúdo
-        modalContent.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-        
-        // Fechar com tecla ESC
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && imageModal.classList.contains('active')) {
-                closeModal();
-            }
-        });
+        } else {
+            console.warn('Elementos do modal de imagens não encontrados!');
+        }
     </script>
 </body>
 </html>
