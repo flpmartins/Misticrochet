@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Misticrochet - Artesanato em crochê místico e delicado. Peças únicas feitas com amor e dedicação.">
+    <meta name="keywords" content="crochê, artesanato, peças artesanais, crochê místico, handmade">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Misticrochet - Artesanato em Crochê Místico">
+    <meta property="og:description" content="Peças únicas em crochê feitas com amor e dedicação. Artesanato místico e delicado.">
+    <meta property="og:image" content="assets/logo.jpeg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Misticrochet - Artesanato em Crochê Místico">
+    <meta property="twitter:description" content="Peças únicas em crochê feitas com amor e dedicação. Artesanato místico e delicado.">
+    <meta property="twitter:image" content="assets/logo.jpeg">
+    
+    <title>Misticrochet - Artesanato em Crochê Místico</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="config.js"></script>
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="header" id="header">
+        <nav class="navbar container">
+            <a href="#inicio" class="navbar-logo" aria-label="Voltar ao início">
+                <img src="assets/logo.jpeg" alt="Logo Misticrochet" class="logo-small">
+                <span class="logo-text">Misticrochet</span>
+            </a>
+            <button class="navbar-toggle" aria-label="Menu de navegação" aria-expanded="false" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="navbar-menu" id="navbarMenu">
+                <li><a href="#inicio" class="nav-link">Início</a></li>
+                <li><a href="#produtos" class="nav-link">Produtos</a></li>
+                <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <img src="assets/logo.jpeg" alt="Logo Misticrochet - Gato místico com fios de crochê" class="hero-logo" aria-label="Logo da marca Misticrochet">
+                <h1 class="hero-title">Misticrochet</h1>
+                <p class="hero-subtitle">Crochê místico e delicado feito com amor</p>
+                <p class="hero-description">Peças únicas em crochê que trazem magia e carinho para o seu dia a dia</p>
+                <a href="#produtos" class="btn btn-primary" aria-label="Ver nossos produtos">Conheça Nossos Produtos</a>
+            </div>
+        </div>
+        <div class="hero-decoration"></div>
+    </section>
+
+    <!-- Produtos Section -->
+    <section class="produtos" id="produtos">
+        <div class="container">
+            <h2 class="section-title">Nossos Produtos</h2>
+            <p class="section-subtitle">Peças artesanais únicas, feitas com carinho e dedicação</p>
+            
+            <div class="produtos-grid">
+                <article class="produto-card">
+                    <div class="produto-image">
+                        <img src="assets/amigurumi.jpeg" alt="Amigurumis místicos em crochê - bichinhos artesanais" class="produto-img" data-image-modal="assets/amigurumi.jpeg">
+                    </div>
+                    <div class="produto-content">
+                        <h3 class="produto-title">Amigurumis Místicos</h3>
+                        <p class="produto-description">Bichinhos de crochê encantadores, perfeitos para decorar e presentear</p>
+                        <span class="produto-price">A partir de R$ 45,00</span>
+                    </div>
+                </article>
+
+                <article class="produto-card">
+                    <div class="produto-image">
+                        <img src="assets/acessorios-delicados.jpeg" alt="Acessórios delicados em crochê - bolsinhas e chaveiros" class="produto-img" data-image-modal="assets/acessorios-delicados.jpeg">
+                    </div>
+                    <div class="produto-content">
+                        <h3 class="produto-title">Acessórios Delicados</h3>
+                        <p class="produto-description">Bolsinhas, chaveiros e outros acessórios feitos com fios especiais</p>
+                        <span class="produto-price">A partir de R$ 30,00</span>
+                    </div>
+                </article>
+
+                <article class="produto-card">
+                    <div class="produto-image">
+                        <img src="assets/pecas-personalizadas.jpeg" alt="Peças personalizadas em crochê sob medida" class="produto-img" data-image-modal="assets/pecas-personalizadas.jpeg">
+                    </div>
+                    <div class="produto-content">
+                        <h3 class="produto-title">Peças Personalizadas</h3>
+                        <p class="produto-description">Encomendas sob medida, criadas especialmente para você</p>
+                        <span class="produto-price">Sob consulta</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section class="sobre" id="sobre">
+        <div class="container">
+            <h2 class="section-title">Sobre a Misticrochet</h2>
+            <div class="sobre-content">
+                <div class="sobre-text">
+                    <div class="sobre-text-inner">
+                        <p class="sobre-paragraph">
+                            A <strong>Misticrochet</strong> nasceu do amor pelo artesanato e pela magia que cada ponto de crochê pode criar. 
+                            Cada peça é feita à mão com muito carinho, atenção aos detalhes e dedicação.
+                        </p>
+                        <p class="sobre-paragraph">
+                            Nossa missão é trazer um toque místico e delicado para o seu dia a dia através de peças únicas 
+                            que combinam tradição artesanal com design moderno e minimalista.
+                        </p>
+                        <p class="sobre-paragraph">
+                            Acreditamos que cada ponto conta uma história e cada peça carrega a energia positiva de quem a criou. 
+                            Por isso, trabalhamos com materiais de qualidade e técnicas que valorizam a beleza do artesanato manual.
+                        </p>
+                    </div>
+                </div>
+                <div class="sobre-decoration">
+                    <div class="yarn-artwork" aria-hidden="true">
+                        <div class="yarn-circle">
+                            <div class="yarn-ring yarn-ring-1"></div>
+                            <div class="yarn-ring yarn-ring-2"></div>
+                            <div class="yarn-ring yarn-ring-3"></div>
+                            <div class="yarn-center">
+                                <div class="yarn-star star-1">✦</div>
+                                <div class="yarn-star star-2">✦</div>
+                                <div class="yarn-star star-3">✦</div>
+                            </div>
+                        </div>
+                        <div class="yarn-ball"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos Section -->
+    <section class="depoimentos" id="depoimentos">
+        <div class="container">
+            <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
+            <div class="depoimentos-grid">
+                <article class="depoimento-card">
+                    <div class="depoimento-stars" aria-label="5 estrelas">
+                        <span aria-hidden="true">★★★★★</span>
+                    </div>
+                    <p class="depoimento-text">
+                        "Kuromon perfeito! Acabamento impecável e atendimento super atencioso. Amei!"
+                    </p>
+                    <p class="depoimento-author">— Filipe Martins</p>
+                </article>
+
+                <article class="depoimento-card">
+                    <div class="depoimento-stars" aria-label="5 estrelas">
+                        <span aria-hidden="true">★★★★★</span>
+                    </div>
+                    <p class="depoimento-text">
+                        "Ursinho maravilhoso! Delicado, macio e com ótimo acabamento. Compra certeira!"
+                    </p>
+                    <p class="depoimento-author">— Filipe Martins</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section class="contato" id="contato">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p class="section-subtitle">Tire suas dúvidas ou faça sua encomenda personalizada</p>
+            
+            <div class="contato-content">
+                <div class="contato-info">
+                    <div class="info-card">
+                        <div class="info-icon">✉️</div>
+                        <h3 class="info-title">E-mail</h3>
+                        <a href="mailto:misticrochet47@gmail.com" class="info-link">
+                            misticrochet47@gmail.com
+                        </a>
+                        <p class="info-description">Respondemos em até 24 horas</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">📱</div>
+                        <h3 class="info-title">Redes Sociais</h3>
+                        <div class="info-social">
+                            <a href="https://www.instagram.com/misticrochet/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                                Instagram
+                            </a>
+                            <a href="https://www.tiktok.com/@misticrochet?_r=1&_t=ZS-921sIsaZiMe" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="TikTok">
+                                TikTok
+                            </a>
+                        </div>
+                        <p class="info-description">Siga-nos para ver novidades</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">⏰</div>
+                        <h3 class="info-title">Horário de Atendimento</h3>
+                        <p class="info-text">Segunda a Sexta: 9h às 18h</p>
+                        <p class="info-text">Sábado: 9h às 13h</p>
+                        <p class="info-description">Encomendas personalizadas sob consulta</p>
+                    </div>
+                </div>
+
+                <form class="contato-form" action="#" method="POST" aria-label="Formulário de contato">
+                    <div class="form-group">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input 
+                            type="text" 
+                            id="nome" 
+                            name="nome" 
+                            class="form-input" 
+                            required 
+                            aria-required="true"
+                            placeholder="Seu nome completo"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            class="form-input" 
+                            required 
+                            aria-required="true"
+                            placeholder="seu@email.com"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem" class="form-label">Mensagem</label>
+                        <textarea 
+                            id="mensagem" 
+                            name="mensagem" 
+                            class="form-textarea" 
+                            rows="5" 
+                            required 
+                            aria-required="true"
+                            placeholder="Conte-nos sobre sua encomenda ou dúvida..."
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-submit" aria-label="Enviar mensagem">
+                        Enviar Mensagem
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/logo.jpeg" alt="Logo Misticrochet" class="footer-logo" aria-label="Logo da marca Misticrochet">
+                    <p class="footer-tagline">Artesanato místico e delicado</p>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contato</h3>
+                    <a href="mailto:misticrochet47@gmail.com" class="footer-email" aria-label="Enviar e-mail para misticrochet47@gmail.com">
+                        misticrochet47@gmail.com
+                    </a>
+                </div>
+
+                <div class="footer-social">
+                    <h3 class="footer-title">Redes Sociais</h3>
+                    <div class="social-links">
+                        <a 
+                            href="https://www.instagram.com/misticrochet/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="social-link"
+                            aria-label="Seguir no Instagram"
+                        >
+                            Instagram
+                        </a>
+                        <a 
+                            href="https://www.tiktok.com/@misticrochet?_r=1&_t=ZS-921sIsaZiMe" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="social-link"
+                            aria-label="Seguir no TikTok"
+                        >
+                            TikTok
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Misticrochet. Todos os direitos reservados.</p>
+                <p>Feito com <span class="heart" aria-label="amor">♥</span> e muito carinho</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a 
+        href="https://wa.me/5519999669311?text=Olá!%20Vim%20através%20da%20sua%20landing%20page%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20produtos.%20✨🩷" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="whatsapp-button"
+        aria-label="Fale conosco no WhatsApp"
+        title="Fale conosco no WhatsApp"
+    >
+        <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        <span class="whatsapp-pulse"></span>
+    </a>
+
+    <!-- Modal para Imagens dos Produtos -->
+    <div class="image-modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Visualização de imagem do produto">
+        <div class="image-modal-overlay" id="modalOverlay" aria-label="Fechar modal"></div>
+        <div class="image-modal-content">
+            <button class="image-modal-close" id="modalClose" aria-label="Fechar modal" type="button">×</button>
+            <img class="image-modal-img" id="modalImage" src="" alt="Imagem ampliada do produto">
+        </div>
+    </div>
+
+    <!-- Dialog de Agradecimento -->
+    <div class="thank-you-dialog" id="thankYouDialog" role="dialog" aria-modal="true" aria-labelledby="thankYouTitle">
+        <div class="thank-you-overlay" id="thankYouOverlay"></div>
+        <div class="thank-you-content">
+            <div class="thank-you-icon">✨</div>
+            <h3 class="thank-you-title" id="thankYouTitle">Obrigado pelo seu contato!</h3>
+            <p class="thank-you-message">Recebemos sua mensagem e em breve retornaremos. Ficamos felizes em poder ajudar!</p>
+            <button class="btn btn-primary thank-you-button" id="thankYouClose" type="button">Fechar</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Fechar menu mobile se estiver aberto
+                    const navMenu = document.getElementById('navbarMenu');
+                    const navToggle = document.getElementById('navToggle');
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+        });
+
+        // Menu mobile toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navbarMenu');
+        
+        if (navToggle) {
+            navToggle.addEventListener('click', function() {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !isExpanded);
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Dialog de Agradecimento
+        const thankYouDialog = document.getElementById('thankYouDialog');
+        const thankYouOverlay = document.getElementById('thankYouOverlay');
+        const thankYouClose = document.getElementById('thankYouClose');
+
+        function openThankYouDialog() {
+            thankYouDialog.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            // Focar no botão de fechar para acessibilidade
+            setTimeout(() => thankYouClose.focus(), 100);
+        }
+
+        function closeThankYouDialog() {
+            thankYouDialog.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Configuração do EmailJS está no arquivo config.js
+        // As credenciais são carregadas de config.js para não ficarem expostas no código principal
+        
+        // Verificar se EMAILJS_CONFIG foi carregado do config.js
+        if (typeof EMAILJS_CONFIG === 'undefined') {
+            console.error('Erro: config.js não foi carregado. Verifique se o arquivo existe.');
+            // Criar objeto vazio para evitar erros
+            var EMAILJS_CONFIG = {
+                PUBLIC_KEY: 'YOUR_PUBLIC_KEY',
+                SERVICE_ID: 'YOUR_SERVICE_ID',
+                TEMPLATE_ID: 'YOUR_TEMPLATE_ID',
+                TO_EMAIL: 'misticrochet47@gmail.com'
+            };
+        }
+        
+        // Inicializar EmailJS apenas se a chave pública estiver configurada
+        if (EMAILJS_CONFIG.PUBLIC_KEY && EMAILJS_CONFIG.PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+            emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+        }
+
+        // Validação e envio do formulário
+        const contatoForm = document.querySelector('.contato-form');
+        const submitButton = contatoForm.querySelector('.btn-submit');
+        
+        contatoForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Desabilitar botão durante o envio
+            const originalButtonText = submitButton.textContent;
+            submitButton.disabled = true;
+            submitButton.textContent = 'Enviando...';
+            
+            // Coletar dados do formulário
+            const formData = {
+                nome: document.getElementById('nome').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                mensagem: document.getElementById('mensagem').value.trim()
+            };
+            
+            // Verificar se EmailJS está configurado
+            if (EMAILJS_CONFIG.PUBLIC_KEY === 'YOUR_PUBLIC_KEY' || 
+                EMAILJS_CONFIG.SERVICE_ID === 'YOUR_SERVICE_ID' || 
+                EMAILJS_CONFIG.TEMPLATE_ID === 'YOUR_TEMPLATE_ID') {
+                
+                // EmailJS não configurado - usar fallback (mailto)
+                const mailtoLink = `mailto:${EMAILJS_CONFIG.TO_EMAIL}?subject=Contato via Site - ${encodeURIComponent(formData.nome)}&body=${encodeURIComponent('Nome: ' + formData.nome + '\n\nEmail: ' + formData.email + '\n\nMensagem:\n' + formData.mensagem)}`;
+                window.location.href = mailtoLink;
+                
+                // Mostrar dialog de agradecimento
+                setTimeout(() => {
+                    openThankYouDialog();
+                    contatoForm.reset();
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalButtonText;
+                }, 500);
+                
+                return;
+            }
+            
+            try {
+                // Formatar mensagem completa com nome e email incluídos automaticamente
+                // O nome e email serão adicionados no início da mensagem sem o cliente saber
+                const mensagemCompleta = `Olá! Meu nome é ${formData.nome} e meu email é ${formData.email}.\n\n${formData.mensagem}`;
+                
+                // Enviar email usando EmailJS
+                // O EmailJS enviará um email para misticrochet47@gmail.com
+                // com os dados do formulário (nome e email já incluídos na mensagem)
+                await emailjs.send(
+                    EMAILJS_CONFIG.SERVICE_ID,
+                    EMAILJS_CONFIG.TEMPLATE_ID,
+                    {
+                        from_name: formData.nome,
+                        from_email: formData.email,
+                        message: mensagemCompleta,  // Mensagem com nome e email incluídos automaticamente
+                        to_email: EMAILJS_CONFIG.TO_EMAIL,
+                        reply_to: formData.email
+                    }
+                );
+                
+                // Sucesso - mostrar dialog de agradecimento
+                openThankYouDialog();
+                contatoForm.reset();
+                
+            } catch (error) {
+                console.error('Erro ao enviar email:', error);
+                
+                // Em caso de erro, oferecer alternativa
+                const useMailto = confirm(
+                    'Ops! Ocorreu um erro ao enviar sua mensagem.\n\n' +
+                    'Deseja abrir seu cliente de email para enviar manualmente?'
+                );
+                
+                if (useMailto) {
+                    const mailtoLink = `mailto:${EMAILJS_CONFIG.TO_EMAIL}?subject=Contato via Site - ${encodeURIComponent(formData.nome)}&body=${encodeURIComponent('Nome: ' + formData.nome + '\n\nEmail: ' + formData.email + '\n\nMensagem:\n' + formData.mensagem)}`;
+                    window.location.href = mailtoLink;
+                }
+            } finally {
+                // Reabilitar botão
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+            }
+        });
+
+        // Fechar dialog ao clicar no overlay, botão ou tecla ESC
+        thankYouOverlay.addEventListener('click', closeThankYouDialog);
+        thankYouClose.addEventListener('click', closeThankYouDialog);
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && thankYouDialog.classList.contains('active')) {
+                closeThankYouDialog();
+            }
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('.theme-icon');
+        const html = document.documentElement;
+
+        // Verificar tema salvo ou preferência do sistema
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+
+        // Aplicar tema inicial
+        if (initialTheme === 'dark') {
+            html.setAttribute('data-theme', 'dark');
+            themeIcon.textContent = '☀️';
+        } else {
+            html.removeAttribute('data-theme');
+            themeIcon.textContent = '🌙';
+        }
+
+        // Toggle de tema
+        themeToggle.addEventListener('click', function() {
+            const currentTheme = html.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                html.removeAttribute('data-theme');
+                themeIcon.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                themeIcon.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Escutar mudanças na preferência do sistema
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+            if (!localStorage.getItem('theme')) {
+                if (e.matches) {
+                    html.setAttribute('data-theme', 'dark');
+                    themeIcon.textContent = '☀️';
+                } else {
+                    html.removeAttribute('data-theme');
+                    themeIcon.textContent = '🌙';
+                }
+            }
+        });
+
+        // Modal de Imagens dos Produtos
+        const imageModal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalClose = document.getElementById('modalClose');
+        const modalContent = document.querySelector('.image-modal-content');
+        const produtoImgs = document.querySelectorAll('.produto-img[data-image-modal]');
+
+        function openModal(imageSrc, imageAlt) {
+            modalImage.src = imageSrc;
+            modalImage.alt = imageAlt || 'Imagem ampliada do produto';
+            imageModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Previne scroll do body
+            // Focar no botão de fechar para acessibilidade
+            setTimeout(() => modalClose.focus(), 100);
+        }
+
+        function closeModal() {
+            imageModal.classList.remove('active');
+            document.body.style.overflow = ''; // Restaura scroll do body
+        }
+
+        // Adicionar evento de clique nas imagens dos produtos
+        produtoImgs.forEach(img => {
+            img.style.cursor = 'pointer';
+            img.setAttribute('role', 'button');
+            img.setAttribute('tabindex', '0');
+            img.addEventListener('click', function() {
+                openModal(this.getAttribute('data-image-modal'), this.getAttribute('alt'));
+            });
+            // Permitir abrir com Enter/Space
+            img.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openModal(this.getAttribute('data-image-modal'), this.getAttribute('alt'));
+                }
+            });
+        });
+
+        // Fechar modal ao clicar no overlay (mas não na imagem)
+        modalOverlay.addEventListener('click', closeModal);
+        modalClose.addEventListener('click', closeModal);
+        
+        // Prevenir fechar ao clicar na imagem ou no conteúdo
+        modalContent.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+        
+        // Fechar com tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && imageModal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
+

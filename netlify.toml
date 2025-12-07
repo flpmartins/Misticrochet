@@ -1,0 +1,9 @@
+# Configuração do Netlify
+# Para sites estáticos, o Netlify não executa Node.js por padrão
+# Use a abordagem de variáveis de ambiente no frontend ou faça upload manual do config.js
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+

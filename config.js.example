@@ -1,0 +1,18 @@
+// Arquivo de exemplo - Copie este arquivo para config.js e preencha com suas credenciais
+// IMPORTANTE: Este arquivo contém credenciais sensíveis
+// NÃO faça commit do config.js no Git (ele está no .gitignore)
+// 
+// Para configurar:
+// 1. Copie este arquivo: cp config.js.example config.js
+// 2. Crie uma conta em https://www.emailjs.com/
+// 3. Crie um serviço de email (Gmail, Outlook, etc.)
+// 4. Crie um template de email que envia para misticrochet47@gmail.com
+// 5. Substitua os valores abaixo pelas suas credenciais
+
+const EMAILJS_CONFIG = {
+    PUBLIC_KEY: 'YOUR_PUBLIC_KEY',        // Encontre em: Dashboard > Account > API Keys
+    SERVICE_ID: 'YOUR_SERVICE_ID',          // Encontre em: Dashboard > Email Services (serviço que ENVIA)
+    TEMPLATE_ID: 'YOUR_TEMPLATE_ID',       // Encontre em: Dashboard > Email Templates
+    TO_EMAIL: 'misticrochet47@gmail.com'   // Email que RECEBE as mensagens do formulário
+};
+
