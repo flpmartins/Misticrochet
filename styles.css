@@ -49,6 +49,10 @@
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
+
+    /* Produtos carousel */
+    --prod-card-width: 320px;
+    --prod-carousel-side: 44px; /* espaço lateral para setas */
 }
 
 /* Tema Escuro - Mantém identidade visual, apenas ajusta cores de fundo e texto */
@@ -78,6 +82,7 @@ html {
     /* Esconder scrollbar mas manter funcionalidade */
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE e Edge */
+    overflow-x: hidden; /* evita scroll horizontal da página */
 }
 
 html::-webkit-scrollbar {
@@ -601,17 +606,46 @@ body::-webkit-scrollbar {
     text-align: center;
 }
 
+/* ============================================
+   PRODUTOS CAROUSEL
+   ============================================ */
+.produtos-carousel {
+    position: relative;
+    overflow: hidden; /* impede setas/efeitos de criarem overflow horizontal na página */
+    margin: 0 auto;
+    /* 3 cards + 2 gaps + espaço das setas */
+    max-width: calc(var(--prod-card-width) * 3 + var(--spacing-md) * 2 + var(--prod-carousel-side) * 2);
+}
+
+.produtos-carousel-viewport {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--prod-carousel-side) 8px; /* espaço para não cortar o 1º/último card atrás das setas */
+    scroll-padding-left: var(--prod-carousel-side);
+    scroll-padding-right: var(--prod-carousel-side);
+}
+
+.produtos-carousel-viewport::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
 .produtos-grid {
-    /* Flex-wrap centraliza automaticamente linhas incompletas (1 ou 2 cards) */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: center; /* centraliza quando NÃO tem overflow */
     gap: var(--spacing-md);
-    margin-top: var(--spacing-md);
-    margin-left: auto;
-    margin-right: auto;
-    /* Largura máxima para caber exatamente 3 cards (320px) + 2 gaps (~2rem cada) */
-    max-width: 1040px;
+    margin: 0;
+}
+
+/* Quando há overflow, alinhar à esquerda (evita "cortar" o primeiro card) */
+.produtos-carousel.is-overflowing .produtos-grid {
+    justify-content: flex-start;
 }
 
 .produto-card {
@@ -624,10 +658,98 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     height: 100%;
-    /* Mantém cards com tamanho consistente */
-    width: 100%;
-    max-width: 320px;
-    flex: 1 1 280px;
+    /* Mantém cards com tamanho consistente no carousel */
+    flex: 0 0 var(--prod-card-width);
+    max-width: var(--prod-card-width);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.produtos-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: var(--border-radius-full);
+    border: none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--color-primary);
+    font-size: 30px;
+    line-height: 1;
+    padding: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-fast);
+    z-index: 2;
+}
+
+.produtos-carousel-btn:hover,
+.produtos-carousel-btn:focus {
+    background: var(--color-primary);
+    color: white;
+    outline: none;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.produtos-carousel-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+    pointer-events: none;
+}
+
+.produtos-carousel-icon {
+    display: block;
+    transform: translateY(-1px);
+    line-height: 1;
+    user-select: none;
+}
+
+.produtos-carousel-btn.prev {
+    left: 0;
+}
+
+.produtos-carousel-btn.next {
+    right: 0;
+}
+
+[data-theme="dark"] .produtos-carousel-btn {
+    background: rgba(42, 42, 42, 0.95);
+    color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .produtos-carousel-btn:hover,
+[data-theme="dark"] .produtos-carousel-btn:focus {
+    background: var(--color-primary);
+    color: white;
+}
+
+@media (max-width: 1024px) {
+    .produtos-carousel {
+        /* 2 cards + 1 gap + espaço das setas */
+        max-width: calc(var(--prod-card-width) * 2 + var(--spacing-md) * 1 + var(--prod-carousel-side) * 2);
+    }
+}
+
+@media (max-width: 768px) {
+    .produtos-carousel {
+        max-width: 100%;
+    }
+    .produtos-carousel-viewport {
+        max-width: 100%;
+        padding: 0 var(--spacing-sm) 8px;
+    }
+    .produto-card {
+        flex: 0 0 80vw;
+        max-width: 80vw;
+    }
+    .produtos-carousel-btn {
+        display: none; /* swipe/drag no mobile */
+    }
 }
 
 [data-theme="dark"] .produto-card {

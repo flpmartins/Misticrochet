@@ -86,7 +86,10 @@
             <!-- Seção: Amigurumis -->
             <div class="produtos-categoria">
                 <h3 class="categoria-title">Amigurumis</h3>
-                <div class="produtos-grid">
+                <div class="produtos-carousel" data-carousel>
+                    <button class="produtos-carousel-btn prev" type="button" aria-label="Anterior"><span class="produtos-carousel-icon" aria-hidden="true">‹</span></button>
+                    <div class="produtos-carousel-viewport">
+                        <div class="produtos-grid">
                     <article class="produto-card">
                         <div class="produto-image">
                             <img src="assets/amigurumi.jpeg" alt="Amigurumi místico em crochê" class="produto-img" data-image-modal="assets/amigurumi.jpeg">
@@ -130,13 +133,19 @@
                             <span class="produto-price">Sob consulta</span>
                         </div>
                     </article>
+                        </div>
+                    </div>
+                    <button class="produtos-carousel-btn next" type="button" aria-label="Próximo"><span class="produtos-carousel-icon" aria-hidden="true">›</span></button>
                 </div>
             </div>
 
             <!-- Seção: Acessórios Delicados -->
             <div class="produtos-categoria">
                 <h3 class="categoria-title">Acessórios Delicados</h3>
-                <div class="produtos-grid">
+                <div class="produtos-carousel" data-carousel>
+                    <button class="produtos-carousel-btn prev" type="button" aria-label="Anterior"><span class="produtos-carousel-icon" aria-hidden="true">‹</span></button>
+                    <div class="produtos-carousel-viewport">
+                        <div class="produtos-grid">
                     <article class="produto-card">
                         <div class="produto-image">
                             <img src="assets/acessorios-delicados.jpeg" alt="Acessórios delicados em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados.jpeg">
@@ -169,13 +178,19 @@
                             <span class="produto-price">Sob consulta</span>
                         </div>
                     </article>
+                        </div>
+                    </div>
+                    <button class="produtos-carousel-btn next" type="button" aria-label="Próximo"><span class="produtos-carousel-icon" aria-hidden="true">›</span></button>
                 </div>
             </div>
 
             <!-- Seção: Vestimentas -->
             <div class="produtos-categoria">
                 <h3 class="categoria-title">Vestimentas</h3>
-                <div class="produtos-grid">
+                <div class="produtos-carousel" data-carousel>
+                    <button class="produtos-carousel-btn prev" type="button" aria-label="Anterior"><span class="produtos-carousel-icon" aria-hidden="true">‹</span></button>
+                    <div class="produtos-carousel-viewport">
+                        <div class="produtos-grid">
                     <article class="produto-card">
                         <div class="produto-image">
                             <img src="assets/vestimentas-1.jpeg" alt="Vestimenta em crochê" class="produto-img" data-image-modal="assets/vestimentas-1.jpeg">
@@ -197,46 +212,11 @@
                             <span class="produto-price">Sob consulta</span>
                         </div>
                     </article>
+                        </div>
+                    </div>
+                    <button class="produtos-carousel-btn next" type="button" aria-label="Próximo"><span class="produtos-carousel-icon" aria-hidden="true">›</span></button>
                 </div>
             </div>
-
-            <!-- Seção: Produtos Personalizados (comentada temporariamente) -->
-            <!--
-            <div class="produtos-categoria">
-                <h3 class="categoria-title">Produtos Personalizados</h3>
-                <div class="produtos-grid">
-                    <article class="produto-card">
-                        <div class="produto-image">
-                        </div>
-                        <div class="produto-content">
-                            <h4 class="produto-title">Peça Personalizada 1</h4>
-                            <p class="produto-description">Encomenda sob medida, criada especialmente para você</p>
-                            <span class="produto-price">Sob consulta</span>
-                        </div>
-                    </article>
-
-                    <article class="produto-card">
-                        <div class="produto-image">
-                        </div>
-                        <div class="produto-content">
-                            <h4 class="produto-title">Peça Personalizada 2</h4>
-                            <p class="produto-description">Peça única feita de acordo com suas preferências</p>
-                            <span class="produto-price">Sob consulta</span>
-                        </div>
-                    </article>
-
-                    <article class="produto-card">
-                        <div class="produto-image">
-                        </div>
-                        <div class="produto-content">
-                            <h4 class="produto-title">Peça Personalizada 3</h4>
-                            <p class="produto-description">Criação exclusiva feita com muito amor e dedicação</p>
-                            <span class="produto-price">Sob consulta</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-            -->
         </div>
     </section>
 
@@ -847,6 +827,96 @@
             }
         });
         }
+
+        // Carrosséis das seções de produtos
+        (function setupProdutosCarousels() {
+            const carousels = document.querySelectorAll('.produtos-carousel[data-carousel]');
+            if (!carousels.length) return;
+
+            function setup(carousel) {
+                const viewport = carousel.querySelector('.produtos-carousel-viewport');
+                const track = carousel.querySelector('.produtos-grid');
+                const prevBtn = carousel.querySelector('.produtos-carousel-btn.prev');
+                const nextBtn = carousel.querySelector('.produtos-carousel-btn.next');
+
+                if (!viewport || !track) return;
+
+                function getStep() {
+                    const card = track.querySelector('.produto-card');
+                    if (!card) return 0;
+                    const gap = parseFloat(getComputedStyle(track).gap || '0') || 0;
+                    return card.getBoundingClientRect().width + gap;
+                }
+
+                function getIndex() {
+                    const step = getStep();
+                    if (!step) return 0;
+                    return Math.round((viewport.scrollLeft + step * 0.15) / step);
+                }
+
+                function getMaxIndex() {
+                    const card = track.querySelector('.produto-card');
+                    if (!card) return 0;
+                    const gap = parseFloat(getComputedStyle(track).gap || '0') || 0;
+                    const step = card.getBoundingClientRect().width + gap;
+                    if (!step) return 0;
+
+                    const styles = getComputedStyle(viewport);
+                    const padLeft = parseFloat(styles.paddingLeft || '0') || 0;
+                    const padRight = parseFloat(styles.paddingRight || '0') || 0;
+                    const viewW = viewport.clientWidth - padLeft - padRight;
+                    const perView = Math.max(1, Math.floor((viewW + gap) / step));
+                    const total = track.querySelectorAll('.produto-card').length;
+                    return Math.max(0, total - perView);
+                }
+
+                function scrollToIndex(index) {
+                    const step = getStep();
+                    if (!step) return;
+                    const maxIndex = getMaxIndex();
+                    const clamped = Math.max(0, Math.min(maxIndex, index));
+                    viewport.scrollTo({ left: clamped * step, behavior: 'smooth' });
+                }
+
+                function updateButtons() {
+                    const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+                    const canScroll = maxScroll > 2;
+                    carousel.classList.toggle('is-overflowing', canScroll);
+
+                    if (prevBtn) {
+                        prevBtn.disabled = !canScroll || getIndex() <= 0 || viewport.scrollLeft <= 1;
+                        prevBtn.style.display = canScroll ? '' : 'none';
+                    }
+                    if (nextBtn) {
+                        nextBtn.disabled = !canScroll || getIndex() >= getMaxIndex() || viewport.scrollLeft >= maxScroll - 1;
+                        nextBtn.style.display = canScroll ? '' : 'none';
+                    }
+                }
+
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', function() {
+                        scrollToIndex(getIndex() - 1);
+                    });
+                }
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', function() {
+                        scrollToIndex(getIndex() + 1);
+                    });
+                }
+
+                let raf = null;
+                viewport.addEventListener('scroll', function() {
+                    if (raf) cancelAnimationFrame(raf);
+                    raf = requestAnimationFrame(updateButtons);
+                });
+                window.addEventListener('resize', updateButtons);
+
+                // Estado inicial
+                setTimeout(updateButtons, 0);
+            }
+
+            carousels.forEach(setup);
+        })();
 
         // Modal de Imagens dos Produtos com Carousel
         const imageModal = document.getElementById('imageModal');
