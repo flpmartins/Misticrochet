@@ -10,7 +10,7 @@ const config = {
     PUBLIC_KEY: process.env.EMAILJS_PUBLIC_KEY || '',
     SERVICE_ID: process.env.EMAILJS_SERVICE_ID || '',
     TEMPLATE_ID: process.env.EMAILJS_TEMPLATE_ID || '',
-    TO_EMAIL: process.env.EMAILJS_TO_EMAIL || 'misticrochet47@gmail.com'
+    TO_EMAIL: process.env.EMAILJS_TO_EMAIL || ''
 };
 
 const configContent = `const EMAILJS_CONFIG = ${JSON.stringify(config, null, 4)};`;
