@@ -5,35 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Misticrochet - Artesanato em crochê místico e delicado. Peças únicas feitas com amor e dedicação.">
     <meta name="keywords" content="crochê, artesanato, peças artesanais, crochê místico, handmade">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Misticrochet - Artesanato em Crochê Místico">
     <meta property="og:description" content="Peças únicas em crochê feitas com amor e dedicação. Artesanato místico e delicado.">
     <meta property="og:image" content="assets/logo.jpeg">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="Misticrochet - Artesanato em Crochê Místico">
     <meta property="twitter:description" content="Peças únicas em crochê feitas com amor e dedicação. Artesanato místico e delicado.">
     <meta property="twitter:image" content="assets/logo.jpeg">
-    
+
     <title>Misticrochet - Artesanato em Crochê Místico</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=2025-12-17">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script>
-        // Aguardar EmailJS carregar completamente
-        window.addEventListener('DOMContentLoaded', function() {
-            if (typeof emailjs !== 'undefined') {
-                console.log('EmailJS carregado com sucesso');
-            }
-        });
-    </script>
-    <script src="config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2026-07-07">
 </head>
 <body>
     <!-- Header / Navigation -->
@@ -41,7 +31,10 @@
         <nav class="navbar container">
             <a href="#inicio" class="navbar-logo" aria-label="Voltar ao início">
                 <img src="assets/logo.jpeg" alt="Logo Misticrochet" class="logo-small">
-                <span class="logo-text">Misticrochet</span>
+                <span class="logo-text-wrap">
+                    <span class="logo-text">Misticrochet</span>
+                    <span class="logo-kicker">Crochê autoral</span>
+                </span>
             </a>
             <button class="navbar-toggle" aria-label="Menu de navegação" aria-expanded="false" id="navToggle">
                 <span></span>
@@ -49,15 +42,20 @@
                 <span></span>
             </button>
             <ul class="navbar-menu" id="navbarMenu">
-                <li><a href="#inicio" class="nav-link">Início</a></li>
                 <li><a href="#produtos" class="nav-link">Produtos</a></li>
                 <li><a href="#sobre" class="nav-link">Sobre</a></li>
-                <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
-                <li><a href="#contato" class="nav-link">Contato</a></li>
+                <li><a href="#como-funciona" class="nav-link">Como funciona</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
                 <li>
-                    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro" title="Alternar tema">
-                        <span class="theme-icon">🌙</span>
+                    <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+                        <span class="theme-icon">☾</span>
                     </button>
+                </li>
+                <li>
+                    <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20gostaria%20de%20saber%20mais%20sobre%20as%20pe%C3%A7as" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm nav-whatsapp" aria-label="Falar conosco no WhatsApp">
+                        <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        Fale conosco
+                    </a>
                 </li>
             </ul>
         </nav>
@@ -65,29 +63,43 @@
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
-        <div class="container">
+        <div class="container hero-grid">
             <div class="hero-content">
-                <img src="assets/logo.jpeg" alt="Logo Misticrochet - Gato místico com fios de crochê" class="hero-logo" aria-label="Logo da marca Misticrochet">
-                <h1 class="hero-title">Misticrochet</h1>
-                <p class="hero-subtitle">Crochê místico e delicado feito com amor</p>
-                <p class="hero-description">Peças únicas em crochê que trazem magia e carinho para o seu dia a dia</p>
-                <a href="#produtos" class="btn btn-primary" aria-label="Ver nossos produtos">Conheça Nossos Produtos</a>
+                <span class="hero-badge"><span class="hero-badge-dot"></span>Artesanato autoral em crochê</span>
+                <h1 class="hero-title">Crochê com <em>alma mística</em></h1>
+                <p class="hero-description">Amigurumis, acessórios e vestimentas exclusivos — feitos à mão, ponto a ponto, com magia e muito carinho.</p>
+                <div class="hero-actions">
+                    <a href="#produtos" class="btn btn-primary" aria-label="Ver nossos produtos">Conheça as peças</a>
+                    <a href="https://wa.me/5519999669311?text=Oii%21%20Quero%20fazer%20uma%20encomenda%20personalizada.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Fazer encomenda</a>
+                </div>
+                <div class="hero-rating">
+                    <span class="hero-rating-stars" aria-hidden="true">★★★★★</span>
+                    <span class="hero-rating-text"><strong>5.0</strong> · clientes apaixonados</span>
+                </div>
+            </div>
+            <div class="hero-media" aria-hidden="true">
+                <div class="hero-media-main">
+                    <img src="assets/amigurumi-6.jpeg" alt="" class="hero-media-img">
+                </div>
+                <div class="hero-media-accent">
+                    <img src="assets/acessorios-delicados-3.jpeg" alt="" class="hero-media-img">
+                </div>
+                <div class="hero-media-badge">🧶</div>
             </div>
         </div>
-        <div class="hero-decoration"></div>
     </section>
 
     <!-- Produtos Section -->
     <section class="produtos" id="produtos">
         <div class="container">
             <h2 class="section-title">Nossos Produtos</h2>
-            <p class="section-subtitle">Peças artesanais únicas, feitas com carinho e dedicação</p>
-            
+            <p class="section-subtitle">Deslize para explorar cada coleção artesanal</p>
+
             <!-- Seção: Amigurumis -->
             <div class="produtos-categoria">
                 <h3 class="categoria-title">Amigurumis</h3>
                 <div class="produtos-carousel" data-carousel>
-                    <button class="produtos-carousel-btn prev" type="button" aria-label="Anterior"><span class="produtos-carousel-icon" aria-hidden="true">‹</span></button>
+                    <button class="icon-btn produtos-carousel-btn prev" type="button" aria-label="Anterior"><span class="produtos-carousel-icon" aria-hidden="true">‹</span></button>
                     <div class="produtos-carousel-viewport">
                         <div class="produtos-grid">
                     <article class="produto-card">
@@ -96,8 +108,8 @@
                         </div>
                         <div class="produto-content">
                             <h4 class="produto-title">Ursinho</h4>
-                            <p class="produto-description">Bichinho de crochê encantador, perfeito para decorar e presentear</p>
-                            <span class="produto-price">Sob consulta</span>
+                            <p class="produto-description">Bichinho encantador, perfeito pra decorar e presentear.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Ursinho%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
 
@@ -107,8 +119,8 @@
                         </div>
                         <div class="produto-content">
                             <h4 class="produto-title">Demogorgon</h4>
-                            <p class="produto-description">Peça única em crochê com detalhes cuidadosamente trabalhados</p>
-                            <span class="produto-price">Sob consulta</span>
+                            <p class="produto-description">Peça única com detalhes cuidadosamente trabalhados.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Demogorgon%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
 
@@ -118,8 +130,8 @@
                         </div>
                         <div class="produto-content">
                             <h4 class="produto-title">Kuromon</h4>
-                            <p class="produto-description">Bichinho feito à mão com muito carinho e atenção aos detalhes</p>
-                            <span class="produto-price">Sob consulta</span>
+                            <p class="produto-description">Feito à mão com muito carinho e atenção aos detalhes.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Kuromon%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
 
@@ -129,8 +141,8 @@
                         </div>
                         <div class="produto-content">
                             <h4 class="produto-title">Gatinho</h4>
-                            <p class="produto-description">Peça artesanal em crochê feita à mão com acabamento delicado</p>
-                            <span class="produto-price">Sob consulta</span>
+                            <p class="produto-description">Peça artesanal com acabamento delicado.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Gatinho%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
 
@@ -140,8 +152,8 @@
                         </div>
                         <div class="produto-content">
                             <h4 class="produto-title">Anjinha</h4>
-                            <p class="produto-description">Peça única em crochê com detalhes cuidadosamente trabalhados</p>
-                            <span class="produto-price">Sob consulta</span>
+                            <p class="produto-description">Peça única, cheia de detalhes e ternura.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Anjinha%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
 
@@ -151,8 +163,8 @@
                         </div>
                         <div class="produto-content">
                             <h4 class="produto-title">Stitch</h4>
-                            <p class="produto-description">Bichinho feito à mão com muito carinho e atenção aos detalhes</p>
-                            <span class="produto-price">Sob consulta</span>
+                            <p class="produto-description">Feito à mão com muito carinho — puro charme azul.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Stitch%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
 
@@ -162,13 +174,13 @@
                         </div>
                         <div class="produto-content">
                             <h4 class="produto-title">Suguru Geto</h4>
-                            <p class="produto-description">Peça artesanal em crochê feita à mão com acabamento delicado</p>
-                            <span class="produto-price">Sob consulta</span>
+                            <p class="produto-description">Peça artesanal com acabamento impecável.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Suguru%20Geto%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
                         </div>
                     </div>
-                    <button class="produtos-carousel-btn next" type="button" aria-label="Próximo"><span class="produtos-carousel-icon" aria-hidden="true">›</span></button>
+                    <button class="icon-btn produtos-carousel-btn next" type="button" aria-label="Próximo"><span class="produtos-carousel-icon" aria-hidden="true">›</span></button>
                 </div>
             </div>
 
@@ -176,7 +188,7 @@
             <div class="produtos-categoria">
                 <h3 class="categoria-title">Acessórios Delicados</h3>
                 <div class="produtos-carousel" data-carousel>
-                    <button class="produtos-carousel-btn prev" type="button" aria-label="Anterior"><span class="produtos-carousel-icon" aria-hidden="true">‹</span></button>
+                    <button class="icon-btn produtos-carousel-btn prev" type="button" aria-label="Anterior"><span class="produtos-carousel-icon" aria-hidden="true">‹</span></button>
                     <div class="produtos-carousel-viewport">
                         <div class="produtos-grid">
                     <article class="produto-card">
@@ -185,8 +197,8 @@
                         </div>
                         <div class="produto-content">
                             <h4 class="produto-title">Bolsa</h4>
-                            <p class="produto-description">Peça única feita com fios especiais e muito cuidado</p>
-                            <span class="produto-price">Sob consulta</span>
+                            <p class="produto-description">Peça única feita com fios especiais e muito cuidado.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Bolsa%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
 
@@ -196,8 +208,8 @@
                         </div>
                         <div class="produto-content">
                             <h4 class="produto-title">Chaveiro de Cereja</h4>
-                            <p class="produto-description">Acessório artesanal em crochê, delicado e cheio de charme</p>
-                            <span class="produto-price">Sob consulta</span>
+                            <p class="produto-description">Delicado e cheio de charme pra levar por aí.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Chaveiro%20de%20Cereja%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
 
@@ -207,8 +219,8 @@
                         </div>
                         <div class="produto-content">
                             <h4 class="produto-title">Laço</h4>
-                            <p class="produto-description">Laço delicado em crochê, perfeito para dar um charme especial</p>
-                            <span class="produto-price">Sob consulta</span>
+                            <p class="produto-description">Perfeito pra dar um charme especial no visual.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22La%C3%A7o%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
 
@@ -218,8 +230,8 @@
                         </div>
                         <div class="produto-content">
                             <h4 class="produto-title">Babador</h4>
-                            <p class="produto-description">Peça única feita com fios especiais e muito cuidado</p>
-                            <span class="produto-price">Sob consulta</span>
+                            <p class="produto-description">Peça única feita com fios macios e seguros.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Babador%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
 
@@ -229,8 +241,8 @@
                         </div>
                         <div class="produto-content">
                             <h4 class="produto-title">Bolsa Ghost Face</h4>
-                            <p class="produto-description">Acessório artesanal em crochê, delicado e cheio de charme</p>
-                            <span class="produto-price">Sob consulta</span>
+                            <p class="produto-description">Acessório artesanal, delicado e cheio de atitude.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Bolsa%20Ghost%20Face%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
 
@@ -240,8 +252,8 @@
                         </div>
                         <div class="produto-content">
                             <h4 class="produto-title">Água Viva</h4>
-                            <p class="produto-description">Acessório delicado em crochê, perfeito para dar um charme especial</p>
-                            <span class="produto-price">Sob consulta</span>
+                            <p class="produto-description">Peça delicada, perfeita pra encantar qualquer cantinho.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22%C3%81gua%20Viva%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
 
@@ -251,8 +263,8 @@
                         </div>
                         <div class="produto-content">
                             <h4 class="produto-title">Gatinha Preta</h4>
-                            <p class="produto-description">Peça única feita com fios especiais e muito cuidado</p>
-                            <span class="produto-price">Sob consulta</span>
+                            <p class="produto-description">Peça única feita com fios especiais e muito cuidado.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Gatinha%20Preta%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
 
@@ -262,8 +274,8 @@
                         </div>
                         <div class="produto-content">
                             <h4 class="produto-title">Arraia</h4>
-                            <p class="produto-description">Acessório artesanal em crochê, delicado e cheio de charme</p>
-                            <span class="produto-price">Sob consulta</span>
+                            <p class="produto-description">Acessório artesanal, delicado e cheio de charme.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Arraia%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
 
@@ -273,8 +285,8 @@
                         </div>
                         <div class="produto-content">
                             <h4 class="produto-title">Snoopy</h4>
-                            <p class="produto-description">Acessório delicado em crochê, perfeito para dar um charme especial</p>
-                            <span class="produto-price">Sob consulta</span>
+                            <p class="produto-description">Clássico apaixonante, feito ponto a ponto.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Snoopy%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
 
@@ -284,13 +296,13 @@
                         </div>
                         <div class="produto-content">
                             <h4 class="produto-title">Ursinho</h4>
-                            <p class="produto-description">Peça única feita com fios especiais e muito cuidado</p>
-                            <span class="produto-price">Sob consulta</span>
+                            <p class="produto-description">Peça única feita com fios especiais e muito cuidado.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Ursinho%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
                         </div>
                     </div>
-                    <button class="produtos-carousel-btn next" type="button" aria-label="Próximo"><span class="produtos-carousel-icon" aria-hidden="true">›</span></button>
+                    <button class="icon-btn produtos-carousel-btn next" type="button" aria-label="Próximo"><span class="produtos-carousel-icon" aria-hidden="true">›</span></button>
                 </div>
             </div>
 
@@ -298,7 +310,7 @@
             <div class="produtos-categoria">
                 <h3 class="categoria-title">Vestimentas</h3>
                 <div class="produtos-carousel" data-carousel>
-                    <button class="produtos-carousel-btn prev" type="button" aria-label="Anterior"><span class="produtos-carousel-icon" aria-hidden="true">‹</span></button>
+                    <button class="icon-btn produtos-carousel-btn prev" type="button" aria-label="Anterior"><span class="produtos-carousel-icon" aria-hidden="true">‹</span></button>
                     <div class="produtos-carousel-viewport">
                         <div class="produtos-grid">
                     <article class="produto-card">
@@ -307,8 +319,8 @@
                         </div>
                         <div class="produto-content">
                             <h4 class="produto-title">Blusinha</h4>
-                            <p class="produto-description">Peça em crochê feita à mão, confortável e cheia de personalidade</p>
-                            <span class="produto-price">Sob consulta</span>
+                            <p class="produto-description">Confortável e cheia de personalidade, feita à mão.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Blusinha%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
 
@@ -318,13 +330,13 @@
                         </div>
                         <div class="produto-content">
                             <h4 class="produto-title">Blusa Teia de Aranha</h4>
-                            <p class="produto-description">Modelos feitos sob medida com acabamento delicado e artesanal</p>
-                            <span class="produto-price">Sob consulta</span>
+                            <p class="produto-description">Sob medida, com acabamento delicado e artesanal.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Blusa%20Teia%20de%20Aranha%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
                         </div>
                     </div>
-                    <button class="produtos-carousel-btn next" type="button" aria-label="Próximo"><span class="produtos-carousel-icon" aria-hidden="true">›</span></button>
+                    <button class="icon-btn produtos-carousel-btn next" type="button" aria-label="Próximo"><span class="produtos-carousel-icon" aria-hidden="true">›</span></button>
                 </div>
             </div>
         </div>
@@ -332,39 +344,64 @@
 
     <!-- Sobre Section -->
     <section class="sobre" id="sobre">
-        <div class="container">
-            <h2 class="section-title">Sobre a Misticrochet</h2>
-            <div class="sobre-content">
-                <div class="sobre-text">
-                    <div class="sobre-text-inner">
-                        <p class="sobre-paragraph">
-                            A <strong>Misticrochet</strong> nasceu do amor pelo artesanato e pela magia que cada ponto de crochê pode criar. 
-                            Cada peça é feita à mão com muito carinho, atenção aos detalhes e dedicação.
-                        </p>
-                        <p class="sobre-paragraph">
-                            Nossa missão é trazer um toque místico e delicado para o seu dia a dia através de peças únicas 
-                            que combinam tradição artesanal com design moderno e minimalista.
-                        </p>
-                        <p class="sobre-paragraph">
-                            Acreditamos que cada ponto conta uma história e cada peça carrega a energia positiva de quem a criou. 
-                            Por isso, trabalhamos com materiais de qualidade e técnicas que valorizam a beleza do artesanato manual.
-                        </p>
-                    </div>
+        <div class="container sobre-grid">
+            <div class="sobre-media">
+                <div class="sobre-media-frame">
+                    <img src="assets/logo.jpeg" alt="Misticrochet - artesanato em crochê" class="sobre-media-img">
                 </div>
-                <div class="sobre-decoration">
-                    <div class="yarn-artwork" aria-hidden="true">
-                        <div class="yarn-circle">
-                            <div class="yarn-ring yarn-ring-1"></div>
-                            <div class="yarn-ring yarn-ring-2"></div>
-                            <div class="yarn-ring yarn-ring-3"></div>
-                            <div class="yarn-center">
-                                <div class="yarn-star star-1">✦</div>
-                                <div class="yarn-star star-2">✦</div>
-                                <div class="yarn-star star-3">✦</div>
-                            </div>
-                        </div>
-                        <div class="yarn-ball"></div>
-                    </div>
+                <div class="sobre-media-badge">
+                    <span class="sobre-media-badge-number">100%</span>
+                    <span class="sobre-media-badge-label">feito à mão</span>
+                </div>
+            </div>
+            <div class="sobre-text">
+                <span class="section-eyebrow" aria-hidden="true">✦</span>
+                <h2 class="sobre-title">Sobre a Misticrochet</h2>
+                <p class="sobre-paragraph">
+                    A <strong>Misticrochet</strong> nasceu do amor pelo artesanato e pela magia que cada ponto de crochê pode criar — do amigurumi mais fofo à peça mais ousada.
+                </p>
+                <p class="sobre-paragraph">
+                    Cada peça é feita à mão, unindo tradição artesanal e um olhar moderno, místico e cheio de personalidade.
+                </p>
+                <p class="sobre-paragraph">
+                    Acreditamos que cada ponto conta uma história e carrega a energia positiva de quem a criou.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Funciona Section -->
+    <section class="como-funciona" id="como-funciona">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow" aria-hidden="true">✦</span>
+                <h2 class="section-title">Como funciona a encomenda</h2>
+                <p class="section-subtitle">Do carinho à sua porta, em quatro passos</p>
+            </div>
+            <div class="como-funciona-grid">
+                <div class="como-funciona-card">
+                    <span class="como-funciona-number" aria-hidden="true">01</span>
+                    <div class="como-funciona-icon">✦</div>
+                    <h4 class="como-funciona-title">Escolha sua peça</h4>
+                    <p class="como-funciona-text">Explore os modelos ou me conte a ideia que você tem em mente.</p>
+                </div>
+                <div class="como-funciona-card">
+                    <span class="como-funciona-number" aria-hidden="true">02</span>
+                    <div class="como-funciona-icon">💬</div>
+                    <h4 class="como-funciona-title">Converse no zap</h4>
+                    <p class="como-funciona-text">Alinhamos cores, tamanho, prazo e valor — tudo personalizado.</p>
+                </div>
+                <div class="como-funciona-card">
+                    <span class="como-funciona-number" aria-hidden="true">03</span>
+                    <div class="como-funciona-icon">🧶</div>
+                    <h4 class="como-funciona-title">Feito à mão</h4>
+                    <p class="como-funciona-text">Cada ponto é trabalhado com carinho: uma encomenda única e sua.</p>
+                </div>
+                <div class="como-funciona-card">
+                    <span class="como-funciona-number" aria-hidden="true">04</span>
+                    <div class="como-funciona-icon">🎁</div>
+                    <h4 class="como-funciona-title">Receba com amor</h4>
+                    <p class="como-funciona-text">Sua peça chega embalada com todo cuidado, pronta pra encantar.</p>
                 </div>
             </div>
         </div>
@@ -373,7 +410,10 @@
     <!-- Depoimentos Section -->
     <section class="depoimentos" id="depoimentos">
         <div class="container">
-            <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
+            <div class="section-header">
+                <span class="section-eyebrow" aria-hidden="true">✦</span>
+                <h2 class="section-title">Clientes apaixonados</h2>
+            </div>
             <div class="depoimentos-grid">
                 <article class="depoimento-card">
                     <div class="depoimento-stars" aria-label="5 estrelas">
@@ -382,7 +422,10 @@
                     <p class="depoimento-text">
                         "Kuromon perfeito! Acabamento impecável e atendimento super atencioso. Amei!"
                     </p>
-                    <p class="depoimento-author">— Filipe Martins</p>
+                    <div class="depoimento-author-row">
+                        <span class="depoimento-avatar" aria-hidden="true">F</span>
+                        <span class="depoimento-author">Filipe Martins</span>
+                    </div>
                 </article>
 
                 <article class="depoimento-card">
@@ -390,9 +433,12 @@
                         <span aria-hidden="true">★★★★★</span>
                     </div>
                     <p class="depoimento-text">
-                        "Ursinho maravilhoso! Delicado, macio e com ótimo acabamento. Compra certeira!"
+                        "Ursinho maravilhoso — delicado, macio e com ótimo acabamento. Compra certeira!"
                     </p>
-                    <p class="depoimento-author">— Filipe Martins</p>
+                    <div class="depoimento-author-row">
+                        <span class="depoimento-avatar" aria-hidden="true">F</span>
+                        <span class="depoimento-author">Filipe Martins</span>
+                    </div>
                 </article>
 
                 <article class="depoimento-card">
@@ -400,10 +446,70 @@
                         <span aria-hidden="true">★★★★★</span>
                     </div>
                     <p class="depoimento-text">
-                        "Amei, muito lindo, qualidade ótima"
+                        "Amei, muito lindo, qualidade ótima. Recomendo demais!"
                     </p>
-                    <p class="depoimento-author">— Mariana Marques Papetti</p>
+                    <div class="depoimento-author-row">
+                        <span class="depoimento-avatar" aria-hidden="true">M</span>
+                        <span class="depoimento-author">Mariana M. Papetti</span>
+                    </div>
                 </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow" aria-hidden="true">✦</span>
+                <h2 class="section-title">Perguntas frequentes</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button type="button" class="faq-question" aria-expanded="false">
+                        <span>Vocês fazem peças personalizadas?</span>
+                        <span class="faq-sign" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sim! Amo dar vida a novas ideias. Me manda a referência — personagem, cores, tamanho — e a gente cria juntas.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question" aria-expanded="false">
+                        <span>Qual é o prazo de produção?</span>
+                        <span class="faq-sign" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Depende da peça e da fila de encomendas, normalmente de 7 a 20 dias. Combinamos tudo pelo WhatsApp antes de começar.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question" aria-expanded="false">
+                        <span>Como funciona o pagamento?</span>
+                        <span class="faq-sign" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Pix, cartão ou o que for melhor pra você. Peças sob encomenda pedem um sinal para reservar seu lugar na fila.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question" aria-expanded="false">
+                        <span>Vocês enviam para todo o Brasil?</span>
+                        <span class="faq-sign" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sim! Enviamos pelos Correios com código de rastreio. Retirada também é possível na região de Campinas/SP.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question" aria-expanded="false">
+                        <span>Os materiais são de qualidade?</span>
+                        <span class="faq-sign" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Trabalho com fios selecionados e enchimento antialérgico, pensados para durar e serem seguros — inclusive para os pequenos.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -411,10 +517,16 @@
     <!-- Contato Section -->
     <section class="contato" id="contato">
         <div class="container">
-            <h2 class="section-title">Entre em Contato</h2>
-            <p class="section-subtitle">Tire suas dúvidas ou faça sua encomenda personalizada</p>
-            
-            <div class="contato-content">
+            <div class="contato-grid">
+                <div class="contato-cta">
+                    <div class="contato-cta-icon">💬</div>
+                    <h3 class="contato-cta-title">Fale agora pelo WhatsApp</h3>
+                    <p class="contato-cta-text">O jeito mais rápido de tirar dúvidas e encomendar sua peça personalizada.</p>
+                    <a href="https://wa.me/5519999669311?text=Oii%21%20Quero%20fazer%20uma%20encomenda%20personalizada.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-inverse contato-cta-button">
+                        <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        Chamar no WhatsApp
+                    </a>
+                </div>
                 <div class="contato-info">
                     <div class="info-card">
                         <div class="info-icon">✉️</div>
@@ -422,7 +534,6 @@
                         <a href="mailto:misticrochet47@gmail.com" class="info-link">
                             misticrochet47@gmail.com
                         </a>
-                        <p class="info-description">Respondemos em até 24 horas</p>
                     </div>
 
                     <div class="info-card">
@@ -436,62 +547,15 @@
                                 TikTok
                             </a>
                         </div>
-                        <p class="info-description">Siga-nos para ver novidades</p>
                     </div>
 
                     <div class="info-card">
                         <div class="info-icon">⏰</div>
-                        <h3 class="info-title">Horário de Atendimento</h3>
-                        <p class="info-text">Segunda a Sexta: 9h às 18h</p>
+                        <h3 class="info-title">Atendimento</h3>
+                        <p class="info-text">Seg–Sex: 9h às 18h</p>
                         <p class="info-text">Sábado: 9h às 13h</p>
-                        <p class="info-description">Encomendas personalizadas sob consulta</p>
                     </div>
                 </div>
-
-                <form class="contato-form" method="POST" aria-label="Formulário de contato">
-                    <div class="form-group">
-                        <label for="nome" class="form-label">Nome</label>
-                        <input 
-                            type="text" 
-                            id="nome" 
-                            name="nome" 
-                            class="form-input" 
-                            required 
-                            aria-required="true"
-                            placeholder="Seu nome completo"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" class="form-label">E-mail</label>
-                        <input 
-                            type="email" 
-                            id="email" 
-                            name="email" 
-                            class="form-input" 
-                            required 
-                            aria-required="true"
-                            placeholder="seu@email.com"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="mensagem" class="form-label">Mensagem</label>
-                        <textarea 
-                            id="mensagem" 
-                            name="mensagem" 
-                            class="form-textarea" 
-                            rows="5" 
-                            required 
-                            aria-required="true"
-                            placeholder="Conte-nos sobre sua encomenda ou dúvida..."
-                        ></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-submit" aria-label="Enviar mensagem">
-                        Enviar Mensagem
-                    </button>
-                </form>
             </div>
         </div>
     </section>
@@ -501,10 +565,13 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="assets/logo.jpeg" alt="Logo Misticrochet" class="footer-logo" aria-label="Logo da marca Misticrochet">
-                    <p class="footer-tagline">Artesanato místico e delicado</p>
+                    <div class="footer-brand-header">
+                        <img src="assets/logo.jpeg" alt="Logo Misticrochet" class="footer-logo">
+                        <span class="footer-brand-name">Misticrochet</span>
+                    </div>
+                    <p class="footer-tagline">Artesanato místico e delicado, feito à mão com muito carinho.</p>
                 </div>
-                
+
                 <div class="footer-contact">
                     <h3 class="footer-title">Contato</h3>
                     <a href="mailto:misticrochet47@gmail.com" class="footer-email" aria-label="Enviar e-mail para misticrochet47@gmail.com">
@@ -515,20 +582,20 @@
                 <div class="footer-social">
                     <h3 class="footer-title">Redes Sociais</h3>
                     <div class="social-links">
-                        <a 
-                            href="https://www.instagram.com/misticrochet/" 
-                            target="_blank" 
+                        <a
+                            href="https://www.instagram.com/misticrochet/"
+                            target="_blank"
                             rel="noopener noreferrer"
-                            class="social-link"
+                            class="btn btn-outline btn-sm social-link"
                             aria-label="Seguir no Instagram"
                         >
                             Instagram
                         </a>
-                        <a 
-                            href="https://www.tiktok.com/@misticrochet?_r=1&_t=ZS-921sIsaZiMe" 
-                            target="_blank" 
+                        <a
+                            href="https://www.tiktok.com/@misticrochet?_r=1&_t=ZS-921sIsaZiMe"
+                            target="_blank"
                             rel="noopener noreferrer"
-                            class="social-link"
+                            class="btn btn-outline btn-sm social-link"
                             aria-label="Seguir no TikTok"
                         >
                             TikTok
@@ -536,18 +603,18 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                <p>&copy; 2024 Misticrochet. Todos os direitos reservados.</p>
+                <p>&copy; 2026 Misticrochet. Todos os direitos reservados.</p>
                 <p>Feito com <span class="heart" aria-label="amor">♥</span> e muito carinho</p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Floating Button -->
-    <a 
-        href="https://wa.me/5519999669311?text=Olá!%20Vim%20através%20da%20sua%20landing%20page%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20produtos.%20✨🩷" 
-        target="_blank" 
+    <a
+        href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20gostaria%20de%20saber%20mais%20sobre%20as%20pe%C3%A7as"
+        target="_blank"
         rel="noopener noreferrer"
         class="whatsapp-button"
         aria-label="Fale conosco no WhatsApp"
@@ -563,19 +630,8 @@
     <div class="image-modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Visualização de imagem do produto">
         <div class="image-modal-overlay" id="modalOverlay" aria-label="Fechar modal"></div>
         <div class="image-modal-content">
-            <button class="image-modal-close" id="modalClose" aria-label="Fechar modal" type="button">×</button>
+            <button class="icon-btn image-modal-close" id="modalClose" aria-label="Fechar modal" type="button">×</button>
             <img class="image-modal-img" id="modalImage" src="" alt="Imagem ampliada do produto">
-        </div>
-    </div>
-
-    <!-- Dialog de Agradecimento -->
-    <div class="thank-you-dialog" id="thankYouDialog" role="dialog" aria-modal="true" aria-labelledby="thankYouTitle">
-        <div class="thank-you-overlay" id="thankYouOverlay"></div>
-        <div class="thank-you-content">
-            <div class="thank-you-icon">✨</div>
-            <h3 class="thank-you-title" id="thankYouTitle">Obrigado pelo seu contato!</h3>
-            <p class="thank-you-message">Recebemos sua mensagem e em breve retornaremos. Ficamos felizes em poder ajudar!</p>
-            <button class="btn btn-primary thank-you-button" id="thankYouClose" type="button">Fechar</button>
         </div>
     </div>
 
@@ -605,7 +661,7 @@
         // Menu mobile toggle
         const navToggle = document.getElementById('navToggle');
         const navMenu = document.getElementById('navbarMenu');
-        
+
         if (navToggle) {
             navToggle.addEventListener('click', function() {
                 const isExpanded = this.getAttribute('aria-expanded') === 'true';
@@ -616,326 +672,50 @@
 
         // Header scroll effect
         const header = document.getElementById('header');
-        let lastScroll = 0;
 
         window.addEventListener('scroll', function() {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
+            if (window.pageYOffset > 100) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
-            
-            lastScroll = currentScroll;
         });
-
-        // Dialog de Agradecimento
-        const thankYouDialog = document.getElementById('thankYouDialog');
-        const thankYouOverlay = document.getElementById('thankYouOverlay');
-        const thankYouClose = document.getElementById('thankYouClose');
-
-        // Declarar funções globalmente para serem acessíveis
-        let openThankYouDialog, closeThankYouDialog;
-        
-        if (thankYouDialog && thankYouOverlay && thankYouClose) {
-            openThankYouDialog = function() {
-                thankYouDialog.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                // Focar no botão de fechar para acessibilidade
-                setTimeout(() => thankYouClose.focus(), 100);
-            };
-
-            closeThankYouDialog = function() {
-                thankYouDialog.classList.remove('active');
-                document.body.style.overflow = '';
-            };
-            
-            // Fechar dialog ao clicar no overlay, botão ou tecla ESC
-            thankYouOverlay.addEventListener('click', closeThankYouDialog);
-            thankYouClose.addEventListener('click', closeThankYouDialog);
-            
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && thankYouDialog.classList.contains('active')) {
-                    closeThankYouDialog();
-                }
-            });
-        } else {
-            console.error('Elementos do dialog de agradecimento não encontrados!');
-            // Criar funções vazias para evitar erros
-            openThankYouDialog = function() { console.warn('Dialog não disponível'); };
-            closeThankYouDialog = function() { console.warn('Dialog não disponível'); };
-        }
-
-        // Configuração do EmailJS está no arquivo config.js
-        // As credenciais são carregadas de config.js para não ficarem expostas no código principal
-        
-        // Verificar se EMAILJS_CONFIG foi carregado do config.js
-        // O config.js declara EMAILJS_CONFIG como const, então não podemos redeclarar
-        // Apenas verificamos se existe e criamos um fallback se necessário
-        if (typeof EMAILJS_CONFIG === 'undefined') {
-            console.error('Erro: config.js não foi carregado. Verifique se o arquivo existe.');
-            // Criar objeto padrão no window para evitar erros
-            window.EMAILJS_CONFIG = {
-                PUBLIC_KEY: 'YOUR_PUBLIC_KEY',
-                SERVICE_ID: 'YOUR_SERVICE_ID',
-                TEMPLATE_ID: 'YOUR_TEMPLATE_ID',
-                TO_EMAIL: 'misticrochet47@gmail.com'
-            };
-        }
-        
-        // Usar a variável global (do config.js ou do fallback)
-        // Não redeclarar, apenas referenciar
-        const emailjsConfig = typeof EMAILJS_CONFIG !== 'undefined' ? EMAILJS_CONFIG : window.EMAILJS_CONFIG;
-        
-        // Inicializar EmailJS apenas se a chave pública estiver configurada
-        // Aguardar o EmailJS estar totalmente carregado
-        let emailjsReady = false;
-        
-        // Função para inicializar EmailJS
-        function initializeEmailJS() {
-            const config = typeof EMAILJS_CONFIG !== 'undefined' ? EMAILJS_CONFIG : window.EMAILJS_CONFIG;
-            if (config && config.PUBLIC_KEY && config.PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
-                try {
-                    if (typeof emailjs !== 'undefined') {
-                        // Na versão 4 do EmailJS, a inicialização pode ser feita assim
-                        emailjs.init(config.PUBLIC_KEY);
-                        emailjsReady = true;
-                        console.log('EmailJS inicializado com sucesso. Public Key:', config.PUBLIC_KEY.substring(0, 5) + '...');
-                    } else {
-                        console.error('EmailJS não foi carregado. Verifique se o script está incluído.');
-                    }
-                } catch (error) {
-                    console.error('Erro ao inicializar EmailJS:', error);
-                }
-            } else {
-                console.warn('EmailJS não configurado. Public Key não encontrada.');
-            }
-        }
-        
-        // Tentar inicializar quando o DOM estiver pronto
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initializeEmailJS);
-        } else {
-            // DOM já está pronto
-            setTimeout(initializeEmailJS, 100); // Pequeno delay para garantir que o script carregou
-        }
-
-        // Validação e envio do formulário
-        // Garantir que o formulário existe antes de anexar o evento
-        function setupFormHandler() {
-            const contatoForm = document.querySelector('.contato-form');
-            
-            if (!contatoForm) {
-                console.error('Formulário não encontrado!');
-                return;
-            }
-            
-            const submitButton = contatoForm.querySelector('.btn-submit');
-            
-            // Remover event listener anterior se existir (para evitar duplicatas)
-            const newForm = contatoForm.cloneNode(true);
-            contatoForm.parentNode.replaceChild(newForm, contatoForm);
-            
-            // Anexar evento ao novo formulário
-            const form = document.querySelector('.contato-form');
-            const btn = form.querySelector('.btn-submit');
-            
-            form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-                e.stopPropagation();
-                
-                console.log('Formulário submetido - prevenindo comportamento padrão');
-                
-                // Desabilitar botão durante o envio
-                const originalButtonText = btn.textContent;
-                btn.disabled = true;
-                btn.textContent = 'Enviando...';
-            
-            // Coletar dados do formulário
-            const formData = {
-                nome: document.getElementById('nome').value.trim(),
-                email: document.getElementById('email').value.trim(),
-                mensagem: document.getElementById('mensagem').value.trim()
-            };
-            
-            // Obter configuração do EmailJS (do config.js ou fallback)
-            const emailjsConfig = typeof EMAILJS_CONFIG !== 'undefined' ? EMAILJS_CONFIG : window.EMAILJS_CONFIG;
-            
-            // Verificar se EmailJS está configurado
-            if (!emailjsConfig || emailjsConfig.PUBLIC_KEY === 'YOUR_PUBLIC_KEY' || 
-                emailjsConfig.SERVICE_ID === 'YOUR_SERVICE_ID' || 
-                emailjsConfig.TEMPLATE_ID === 'YOUR_TEMPLATE_ID') {
-                
-                // EmailJS não configurado - usar fallback (mailto)
-                const toEmail = emailjsConfig ? emailjsConfig.TO_EMAIL : 'misticrochet47@gmail.com';
-                const mailtoLink = `mailto:${toEmail}?subject=Contato via Site - ${encodeURIComponent(formData.nome)}&body=${encodeURIComponent('Nome: ' + formData.nome + '\n\nEmail: ' + formData.email + '\n\nMensagem:\n' + formData.mensagem)}`;
-                window.location.href = mailtoLink;
-                
-                // Mostrar dialog de agradecimento
-                setTimeout(() => {
-                    openThankYouDialog();
-                    form.reset();
-                    btn.disabled = false;
-                    btn.textContent = originalButtonText;
-                }, 500);
-                
-                return;
-            }
-            
-            try {
-                // Verificar se EmailJS está pronto
-                if (!emailjsReady || typeof emailjs === 'undefined') {
-                    throw new Error('EmailJS não está inicializado. Verifique a configuração.');
-                }
-                
-                // Formatar mensagem completa com nome e email incluídos automaticamente
-                // O nome e email serão adicionados no início da mensagem sem o cliente saber
-                const mensagemCompleta = `Olá! Meu nome é ${formData.nome} e meu email é ${formData.email}.\n\n${formData.mensagem}`;
-                
-                // Obter configuração do EmailJS
-                const emailjsConfig = typeof EMAILJS_CONFIG !== 'undefined' ? EMAILJS_CONFIG : window.EMAILJS_CONFIG;
-                
-                // Verificar se as credenciais estão configuradas
-                if (!emailjsConfig || !emailjsConfig.SERVICE_ID || !emailjsConfig.TEMPLATE_ID || 
-                    emailjsConfig.SERVICE_ID === 'YOUR_SERVICE_ID' || 
-                    emailjsConfig.TEMPLATE_ID === 'YOUR_TEMPLATE_ID') {
-                    throw new Error('Credenciais do EmailJS não configuradas corretamente.');
-                }
-                
-                // Enviar email usando EmailJS
-                // O EmailJS enviará um email para misticrochet47@gmail.com
-                // com os dados do formulário (nome e email já incluídos na mensagem)
-                
-                // Preparar parâmetros do template
-                const templateParams = {
-                    from_name: formData.nome,
-                    from_email: formData.email,
-                    message: mensagemCompleta,  // Mensagem com nome e email incluídos automaticamente
-                    to_email: emailjsConfig.TO_EMAIL,
-                    reply_to: formData.email
-                };
-                
-                console.log('Enviando email com parâmetros:', {
-                    service: emailjsConfig.SERVICE_ID,
-                    template: emailjsConfig.TEMPLATE_ID,
-                    params: templateParams
-                });
-                
-                // Usar o método correto do EmailJS v4
-                const response = await emailjs.send(
-                    emailjsConfig.SERVICE_ID,
-                    emailjsConfig.TEMPLATE_ID,
-                    templateParams
-                );
-                
-                console.log('Email enviado com sucesso:', response);
-                
-                // Sucesso - mostrar dialog de agradecimento
-                openThankYouDialog();
-                form.reset();
-                
-            } catch (error) {
-                console.error('Erro ao enviar email:', error);
-                console.error('Detalhes do erro:', {
-                    status: error.status,
-                    text: error.text,
-                    message: error.message
-                });
-                
-                // Mensagem de erro mais específica
-                let errorMessage = 'Ops! Ocorreu um erro ao enviar sua mensagem.\n\n';
-                
-                if (error.status === 405) {
-                    errorMessage += 'Erro 405: Método não permitido.\n';
-                    errorMessage += 'Verifique se o EmailJS está configurado corretamente.\n\n';
-                } else if (error.status === 400) {
-                    errorMessage += 'Erro 400: Requisição inválida.\n';
-                    errorMessage += 'Verifique se o template está configurado corretamente.\n\n';
-                } else if (error.status === 401) {
-                    errorMessage += 'Erro 401: Não autorizado.\n';
-                    errorMessage += 'Verifique se a chave pública está correta.\n\n';
-                } else {
-                    errorMessage += `Erro: ${error.message || 'Erro desconhecido'}\n\n`;
-                }
-                
-                errorMessage += 'Deseja abrir seu cliente de email para enviar manualmente?';
-                
-                // Em caso de erro, oferecer alternativa
-                const useMailto = confirm(errorMessage);
-                
-                if (useMailto) {
-                    const emailjsConfig = typeof EMAILJS_CONFIG !== 'undefined' ? EMAILJS_CONFIG : window.EMAILJS_CONFIG;
-                    const toEmail = emailjsConfig ? emailjsConfig.TO_EMAIL : 'misticrochet47@gmail.com';
-                    const mailtoLink = `mailto:${toEmail}?subject=Contato via Site - ${encodeURIComponent(formData.nome)}&body=${encodeURIComponent('Nome: ' + formData.nome + '\n\nEmail: ' + formData.email + '\n\nMensagem:\n' + formData.mensagem)}`;
-                    window.location.href = mailtoLink;
-                }
-            } finally {
-                // Reabilitar botão
-                btn.disabled = false;
-                btn.textContent = originalButtonText;
-            }
-            });
-        }
-        
-        // Garantir que o formulário está pronto antes de configurar
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', setupFormHandler);
-        } else {
-            // DOM já está pronto
-            setupFormHandler();
-        }
 
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
-        
-        if (!themeToggle) {
-            console.error('Theme toggle não encontrado!');
-        } else {
-        const themeIcon = themeToggle.querySelector('.theme-icon');
-        const html = document.documentElement;
 
-        // Verificar tema salvo ou preferência do sistema
-        const savedTheme = localStorage.getItem('theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+        if (themeToggle) {
+            const themeIcon = themeToggle.querySelector('.theme-icon');
+            const html = document.documentElement;
 
-        // Aplicar tema inicial
-        if (initialTheme === 'dark') {
-            html.setAttribute('data-theme', 'dark');
-            themeIcon.textContent = '☀️';
-        } else {
-            html.removeAttribute('data-theme');
-            themeIcon.textContent = '🌙';
-        }
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
 
-        // Toggle de tema
-        themeToggle.addEventListener('click', function() {
-            const currentTheme = html.getAttribute('data-theme');
-            
-            if (currentTheme === 'dark') {
-                html.removeAttribute('data-theme');
-                themeIcon.textContent = '🌙';
-                localStorage.setItem('theme', 'light');
-            } else {
-                html.setAttribute('data-theme', 'dark');
-                themeIcon.textContent = '☀️';
-                localStorage.setItem('theme', 'dark');
-            }
-        });
-
-        // Escutar mudanças na preferência do sistema
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-            if (!localStorage.getItem('theme')) {
-                if (e.matches) {
+            function applyTheme(theme) {
+                if (theme === 'dark') {
                     html.setAttribute('data-theme', 'dark');
-                    themeIcon.textContent = '☀️';
+                    themeIcon.textContent = '☀';
                 } else {
                     html.removeAttribute('data-theme');
-                    themeIcon.textContent = '🌙';
+                    themeIcon.textContent = '☾';
                 }
             }
-        });
+
+            applyTheme(initialTheme);
+
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+                const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                applyTheme(nextTheme);
+                localStorage.setItem('theme', nextTheme);
+            });
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+                if (!localStorage.getItem('theme')) {
+                    applyTheme(e.matches ? 'dark' : 'light');
+                }
+            });
         }
 
         // Carrosséis das seções de produtos
@@ -1021,14 +801,13 @@
                 });
                 window.addEventListener('resize', updateButtons);
 
-                // Estado inicial
                 setTimeout(updateButtons, 0);
             }
 
             carousels.forEach(setup);
         })();
 
-        // Modal de Imagens dos Produtos com Carousel
+        // Modal de Imagens dos Produtos
         const imageModal = document.getElementById('imageModal');
         const modalImage = document.getElementById('modalImage');
         const modalOverlay = document.getElementById('modalOverlay');
@@ -1049,7 +828,6 @@
                 document.body.style.overflow = '';
             }
 
-            // Adicionar evento de clique nas imagens dos produtos
             produtoImgs.forEach(img => {
                 img.style.cursor = 'pointer';
                 img.setAttribute('role', 'button');
@@ -1058,7 +836,6 @@
                     const modalType = this.getAttribute('data-image-modal');
                     openModal(modalType, this.getAttribute('alt'));
                 });
-                // Permitir abrir com Enter/Space
                 img.addEventListener('keydown', function(e) {
                     if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault();
@@ -1068,27 +845,46 @@
                 });
             });
 
-            // Fechar modal ao clicar no overlay (mas não na imagem)
             modalOverlay.addEventListener('click', closeModal);
             modalClose.addEventListener('click', closeModal);
-            
-            // Prevenir fechar ao clicar na imagem ou no conteúdo
+
             if (modalContent) {
                 modalContent.addEventListener('click', function(e) {
                     e.stopPropagation();
                 });
             }
-            
-            // Fechar com tecla ESC
+
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape' && imageModal.classList.contains('active')) {
                     closeModal();
                 }
             });
-        } else {
-            console.warn('Elementos do modal de imagens não encontrados!');
         }
+
+        // FAQ Accordion
+        (function setupFaq() {
+            const items = document.querySelectorAll('.faq-item');
+            items.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const sign = item.querySelector('.faq-sign');
+                if (!question) return;
+                question.addEventListener('click', function() {
+                    const isOpen = item.classList.contains('active');
+                    items.forEach(other => {
+                        other.classList.remove('active');
+                        const otherQuestion = other.querySelector('.faq-question');
+                        const otherSign = other.querySelector('.faq-sign');
+                        if (otherQuestion) otherQuestion.setAttribute('aria-expanded', 'false');
+                        if (otherSign) otherSign.textContent = '+';
+                    });
+                    if (!isOpen) {
+                        item.classList.add('active');
+                        question.setAttribute('aria-expanded', 'true');
+                        if (sign) sign.textContent = '–';
+                    }
+                });
+            });
+        })();
     </script>
 </body>
 </html>
-
