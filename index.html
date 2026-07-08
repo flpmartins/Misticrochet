@@ -26,6 +26,13 @@
     <link rel="stylesheet" href="styles.css?v=2026-07-07">
 </head>
 <body>
+    <div class="loader-screen" id="loaderScreen" aria-hidden="true">
+        <div class="loader-screen-inner">
+            <div class="loader-icon" aria-hidden="true">🧶</div>
+            <p>Carregando Misticrochet...</p>
+        </div>
+    </div>
+
     <!-- Header / Navigation -->
     <header class="header" id="header">
         <nav class="navbar container">
@@ -51,18 +58,12 @@
                         <span class="theme-icon">☾</span>
                     </button>
                 </li>
-                <li>
-                    <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20gostaria%20de%20saber%20mais%20sobre%20as%20pe%C3%A7as" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm nav-whatsapp" aria-label="Falar conosco no WhatsApp">
-                        <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                        Fale conosco
-                    </a>
-                </li>
             </ul>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="inicio">
+    <section class="hero" id="inicio" data-animate="reveal">
         <div class="container hero-grid">
             <div class="hero-content">
                 <span class="hero-badge"><span class="hero-badge-dot"></span>Artesanato autoral em crochê</span>
@@ -74,15 +75,15 @@
                 </div>
                 <div class="hero-rating">
                     <span class="hero-rating-stars" aria-hidden="true">★★★★★</span>
-                    <span class="hero-rating-text"><strong>5.0</strong> · clientes apaixonados</span>
+                    <span class="hero-rating-text"><strong>5.0</strong> · clientes</span>
                 </div>
             </div>
             <div class="hero-media" aria-hidden="true">
                 <div class="hero-media-main">
-                    <img src="assets/amigurumi-6.jpeg" alt="" class="hero-media-img">
+                    <img src="assets/vestimentas-6.jpeg" alt="Vestimenta em crochê" class="hero-media-img">
                 </div>
                 <div class="hero-media-accent">
-                    <img src="assets/acessorios-delicados-3.jpeg" alt="" class="hero-media-img">
+                    <img src="assets/amigurumi-8.jpeg" alt="Amigurumi em crochê" class="hero-media-img">
                 </div>
                 <div class="hero-media-badge">🧶</div>
             </div>
@@ -90,7 +91,7 @@
     </section>
 
     <!-- Produtos Section -->
-    <section class="produtos" id="produtos">
+    <section class="produtos" id="produtos" data-animate="reveal">
         <div class="container">
             <h2 class="section-title">Nossos Produtos</h2>
             <p class="section-subtitle">Deslize para explorar cada coleção artesanal</p>
@@ -211,73 +212,6 @@
                             <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Miles%20Morales%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
-                        </div>
-                    </div>
-                    <button class="icon-btn produtos-carousel-btn next" type="button" aria-label="Próximo"><span class="produtos-carousel-icon" aria-hidden="true">›</span></button>
-                </div>
-            </div>
-
-            <!-- Seção: Acessórios Delicados -->
-            <div class="produtos-categoria">
-                <h3 class="categoria-title">Acessórios Delicados</h3>
-                <div class="produtos-carousel" data-carousel>
-                    <button class="icon-btn produtos-carousel-btn prev" type="button" aria-label="Anterior"><span class="produtos-carousel-icon" aria-hidden="true">‹</span></button>
-                    <div class="produtos-carousel-viewport">
-                        <div class="produtos-grid">
-                    <article class="produto-card">
-                        <div class="produto-image">
-                            <img src="assets/acessorios-delicados.jpeg" alt="Acessórios delicados em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados.jpeg">
-                        </div>
-                        <div class="produto-content">
-                            <h4 class="produto-title">Bolsa</h4>
-                            <p class="produto-description">Peça única feita com fios especiais e muito cuidado.</p>
-                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Bolsa%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
-                        </div>
-                    </article>
-
-                    <article class="produto-card">
-                        <div class="produto-image">
-                            <img src="assets/acessorios-delicados-2.jpeg" alt="Acessório delicado em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados-2.jpeg">
-                        </div>
-                        <div class="produto-content">
-                            <h4 class="produto-title">Chaveiro de Cereja</h4>
-                            <p class="produto-description">Delicado e cheio de charme pra levar por aí.</p>
-                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Chaveiro%20de%20Cereja%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
-                        </div>
-                    </article>
-
-                    <article class="produto-card">
-                        <div class="produto-image">
-                            <img src="assets/acessorios-delicados-3.jpeg" alt="Laço em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados-3.jpeg">
-                        </div>
-                        <div class="produto-content">
-                            <h4 class="produto-title">Laço</h4>
-                            <p class="produto-description">Perfeito pra dar um charme especial no visual.</p>
-                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22La%C3%A7o%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
-                        </div>
-                    </article>
-
-                    <article class="produto-card">
-                        <div class="produto-image">
-                            <img src="assets/acessorios-delicados-4.jpeg" alt="Babador em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados-4.jpeg">
-                        </div>
-                        <div class="produto-content">
-                            <h4 class="produto-title">Babador</h4>
-                            <p class="produto-description">Peça única feita com fios macios e seguros.</p>
-                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Babador%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
-                        </div>
-                    </article>
-
-                    <article class="produto-card">
-                        <div class="produto-image">
-                            <img src="assets/acessorios-delicados-5.jpeg" alt="Bolsa Ghost Face em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados-5.jpeg">
-                        </div>
-                        <div class="produto-content">
-                            <h4 class="produto-title">Bolsa Ghost Face</h4>
-                            <p class="produto-description">Acessório artesanal, delicado e cheio de atitude.</p>
-                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Bolsa%20Ghost%20Face%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
-                        </div>
-                    </article>
 
                     <article class="produto-card">
                         <div class="produto-image">
@@ -336,23 +270,90 @@
 
                     <article class="produto-card">
                         <div class="produto-image">
+                            <img src="assets/acessorios-delicados-17.jpeg" alt="Chaveiro de vôlei em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados-17.jpeg">
+                        </div>
+                        <div class="produto-content">
+                            <h4 class="produto-title">Chaveiro de Vôlei</h4>
+                            <p class="produto-description">Miniatura fofa pra levar a paixão pelo esporte no chaveiro.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Chaveiro%20de%20V%C3%B4lei%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="produto-card">
+                        <div class="produto-image">
+                            <img src="assets/acessorios-delicados-2.jpeg" alt="Acessório delicado em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados-2.jpeg">
+                        </div>
+                        <div class="produto-content">
+                            <h4 class="produto-title">Chaveiro de Cereja</h4>
+                            <p class="produto-description">Delicado e cheio de charme pra levar por aí.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Chaveiro%20de%20Cereja%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+                        </div>
+                    </div>
+                    <button class="icon-btn produtos-carousel-btn next" type="button" aria-label="Próximo"><span class="produtos-carousel-icon" aria-hidden="true">›</span></button>
+                </div>
+            </div>
+
+            <!-- Seção: Acessórios -->
+            <div class="produtos-categoria">
+                <h3 class="categoria-title">Acessórios</h3>
+                <div class="produtos-carousel" data-carousel>
+                    <button class="icon-btn produtos-carousel-btn prev" type="button" aria-label="Anterior"><span class="produtos-carousel-icon" aria-hidden="true">‹</span></button>
+                    <div class="produtos-carousel-viewport">
+                        <div class="produtos-grid">
+                    <article class="produto-card">
+                        <div class="produto-image">
+                            <img src="assets/acessorios-delicados.jpeg" alt="Acessórios em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados.jpeg">
+                        </div>
+                        <div class="produto-content">
+                            <h4 class="produto-title">Bolsa</h4>
+                            <p class="produto-description">Peça única feita com fios especiais e muito cuidado.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Bolsa%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="produto-card">
+                        <div class="produto-image">
+                            <img src="assets/acessorios-delicados-3.jpeg" alt="Laço em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados-3.jpeg">
+                        </div>
+                        <div class="produto-content">
+                            <h4 class="produto-title">Laço</h4>
+                            <p class="produto-description">Perfeito pra dar um charme especial no visual.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22La%C3%A7o%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="produto-card">
+                        <div class="produto-image">
+                            <img src="assets/acessorios-delicados-4.jpeg" alt="Babador em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados-4.jpeg">
+                        </div>
+                        <div class="produto-content">
+                            <h4 class="produto-title">Babador</h4>
+                            <p class="produto-description">Peça única feita com fios macios e seguros.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Babador%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="produto-card">
+                        <div class="produto-image">
+                            <img src="assets/acessorios-delicados-5.jpeg" alt="Bolsa Ghost Face em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados-5.jpeg">
+                        </div>
+                        <div class="produto-content">
+                            <h4 class="produto-title">Bolsa Ghost Face</h4>
+                            <p class="produto-description">Acessório artesanal, delicado e cheio de atitude.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Bolsa%20Ghost%20Face%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="produto-card">
+                        <div class="produto-image">
                             <img src="assets/acessorios-delicados-11.jpeg" alt="Presilha de abelha em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados-11.jpeg">
                         </div>
                         <div class="produto-content">
                             <h4 class="produto-title">Presilha de Abelha</h4>
                             <p class="produto-description">Docinho acessório para deixar o pet ainda mais charmoso.</p>
                             <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Presilha%20de%20Abelha%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
-                        </div>
-                    </article>
-
-                    <article class="produto-card">
-                        <div class="produto-image">
-                            <img src="assets/acessorios-delicados-12.jpeg" alt="Tapetinho em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados-12.jpeg">
-                        </div>
-                        <div class="produto-content">
-                            <h4 class="produto-title">Tapetinho</h4>
-                            <p class="produto-description">Peça delicada para decorar qualquer cantinho da casa.</p>
-                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Tapetinho%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
 
@@ -369,56 +370,12 @@
 
                     <article class="produto-card">
                         <div class="produto-image">
-                            <img src="assets/acessorios-delicados-14.jpeg" alt="Bandeira gato em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados-14.jpeg">
-                        </div>
-                        <div class="produto-content">
-                            <h4 class="produto-title">Bandeira Gato</h4>
-                            <p class="produto-description">Painel decorativo com desenho exclusivo em crochê.</p>
-                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Bandeira%20Gato%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
-                        </div>
-                    </article>
-
-                    <article class="produto-card">
-                        <div class="produto-image">
-                            <img src="assets/acessorios-delicados-15.jpeg" alt="Porta-copo em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados-15.jpeg">
-                        </div>
-                        <div class="produto-content">
-                            <h4 class="produto-title">Porta-Copo</h4>
-                            <p class="produto-description">Porta-copo em formato de flor, delicado e funcional.</p>
-                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Porta-Copo%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
-                        </div>
-                    </article>
-
-                    <article class="produto-card">
-                        <div class="produto-image">
                             <img src="assets/acessorios-delicados-16.jpeg" alt="Babador de cachorro em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados-16.jpeg">
                         </div>
                         <div class="produto-content">
                             <h4 class="produto-title">Babador de Cachorro</h4>
                             <p class="produto-description">Babador macio e seguro, feito especialmente para o pet.</p>
                             <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Babador%20de%20Cachorro%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
-                        </div>
-                    </article>
-
-                    <article class="produto-card">
-                        <div class="produto-image">
-                            <img src="assets/acessorios-delicados-17.jpeg" alt="Chaveiro de vôlei em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados-17.jpeg">
-                        </div>
-                        <div class="produto-content">
-                            <h4 class="produto-title">Chaveiro de Vôlei</h4>
-                            <p class="produto-description">Miniatura fofa pra levar a paixão pelo esporte no chaveiro.</p>
-                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Chaveiro%20de%20V%C3%B4lei%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
-                        </div>
-                    </article>
-
-                    <article class="produto-card">
-                        <div class="produto-image">
-                            <img src="assets/acessorios-delicados-18.jpeg" alt="Porta-prato e porta-copo em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados-18.jpeg">
-                        </div>
-                        <div class="produto-content">
-                            <h4 class="produto-title">Jogo de Porta-Prato e Porta-Copo</h4>
-                            <p class="produto-description">Conjunto delicado com detalhes em flor e borboletas.</p>
-                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Jogo%20de%20Porta-Prato%20e%20Porta-Copo%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
                         </div>
@@ -504,11 +461,67 @@
                     <button class="icon-btn produtos-carousel-btn next" type="button" aria-label="Próximo"><span class="produtos-carousel-icon" aria-hidden="true">›</span></button>
                 </div>
             </div>
+
+            <!-- Seção: Itens de Casa -->
+            <div class="produtos-categoria">
+                <h3 class="categoria-title">Itens de Casa</h3>
+                <div class="produtos-carousel" data-carousel>
+                    <button class="icon-btn produtos-carousel-btn prev" type="button" aria-label="Anterior"><span class="produtos-carousel-icon" aria-hidden="true">‹</span></button>
+                    <div class="produtos-carousel-viewport">
+                        <div class="produtos-grid">
+                    <article class="produto-card">
+                        <div class="produto-image">
+                            <img src="assets/acessorios-delicados-18.jpeg" alt="Porta-prato e porta-copo em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados-18.jpeg">
+                        </div>
+                        <div class="produto-content">
+                            <h4 class="produto-title">Jogo de Porta-Prato e Porta-Copo</h4>
+                            <p class="produto-description">Conjunto delicado com detalhes em flor e borboletas.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Jogo%20de%20Porta-Prato%20e%20Porta-Copo%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="produto-card">
+                        <div class="produto-image">
+                            <img src="assets/acessorios-delicados-15.jpeg" alt="Porta-copo em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados-15.jpeg">
+                        </div>
+                        <div class="produto-content">
+                            <h4 class="produto-title">Porta-Copo</h4>
+                            <p class="produto-description">Porta-copo em formato de flor, delicado e funcional.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Porta-Copo%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="produto-card">
+                        <div class="produto-image">
+                            <img src="assets/acessorios-delicados-14.jpeg" alt="Bandeira gato em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados-14.jpeg">
+                        </div>
+                        <div class="produto-content">
+                            <h4 class="produto-title">Bandeira Gato</h4>
+                            <p class="produto-description">Painel decorativo com desenho exclusivo em crochê.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Bandeira%20Gato%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="produto-card">
+                        <div class="produto-image">
+                            <img src="assets/acessorios-delicados-12.jpeg" alt="Tapetinho em crochê" class="produto-img" data-image-modal="assets/acessorios-delicados-12.jpeg">
+                        </div>
+                        <div class="produto-content">
+                            <h4 class="produto-title">Tapetinho</h4>
+                            <p class="produto-description">Peça delicada para decorar qualquer cantinho da casa.</p>
+                            <a href="https://wa.me/5519999669311?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20da%20Misticrochet%20e%20me%20apaixonei%20pela%20pe%C3%A7a%20%22Tapetinho%22.%20Pode%20me%20contar%20mais%20sobre%20ela%3F" target="_blank" rel="noopener noreferrer" class="produto-order">Encomendar <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+                        </div>
+                    </div>
+                    <button class="icon-btn produtos-carousel-btn next" type="button" aria-label="Próximo"><span class="produtos-carousel-icon" aria-hidden="true">›</span></button>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Sobre Section -->
-    <section class="sobre" id="sobre">
+    <section class="sobre" id="sobre" data-animate="reveal">
         <div class="container sobre-grid">
             <div class="sobre-media">
                 <div class="sobre-media-frame">
@@ -523,20 +536,20 @@
                 <span class="section-eyebrow" aria-hidden="true">✦</span>
                 <h2 class="sobre-title">Sobre a Misticrochet</h2>
                 <p class="sobre-paragraph">
-                    A <strong>Misticrochet</strong> nasceu do amor pelo artesanato e pela magia que cada ponto de crochê pode criar — do amigurumi mais fofo à peça mais ousada.
+                    A <strong>Misticrochet</strong> nasceu do amor pelo artesanato e pela magia que cada ponto de crochê pode criar. Cada peça é feita à mão, com atenção aos detalhes e muita dedicação.
                 </p>
                 <p class="sobre-paragraph">
-                    Cada peça é feita à mão, unindo tradição artesanal e um olhar moderno, místico e cheio de personalidade.
+                    Nossa missão é trazer um toque místico e delicado para o seu dia a dia — peças únicas que unem tradição artesanal e um olhar moderno.
                 </p>
                 <p class="sobre-paragraph">
-                    Acreditamos que cada ponto conta uma história e carrega a energia positiva de quem a criou.
+                    Acreditamos que cada ponto conta uma história e carrega a energia positiva de quem a criou. Por isso trabalhamos com materiais de qualidade e muito carinho.
                 </p>
             </div>
         </div>
     </section>
 
     <!-- Como Funciona Section -->
-    <section class="como-funciona" id="como-funciona">
+    <section class="como-funciona" id="como-funciona" data-animate="reveal">
         <div class="container">
             <div class="section-header">
                 <span class="section-eyebrow" aria-hidden="true">✦</span>
@@ -545,25 +558,21 @@
             </div>
             <div class="como-funciona-grid">
                 <div class="como-funciona-card">
-                    <span class="como-funciona-number" aria-hidden="true">01</span>
                     <div class="como-funciona-icon">✦</div>
                     <h4 class="como-funciona-title">Escolha sua peça</h4>
                     <p class="como-funciona-text">Explore os modelos ou me conte a ideia que você tem em mente.</p>
                 </div>
                 <div class="como-funciona-card">
-                    <span class="como-funciona-number" aria-hidden="true">02</span>
                     <div class="como-funciona-icon">💬</div>
                     <h4 class="como-funciona-title">Converse no zap</h4>
                     <p class="como-funciona-text">Alinhamos cores, tamanho, prazo e valor — tudo personalizado.</p>
                 </div>
                 <div class="como-funciona-card">
-                    <span class="como-funciona-number" aria-hidden="true">03</span>
                     <div class="como-funciona-icon">🧶</div>
                     <h4 class="como-funciona-title">Feito à mão</h4>
                     <p class="como-funciona-text">Cada ponto é trabalhado com carinho: uma encomenda única e sua.</p>
                 </div>
                 <div class="como-funciona-card">
-                    <span class="como-funciona-number" aria-hidden="true">04</span>
                     <div class="como-funciona-icon">🎁</div>
                     <h4 class="como-funciona-title">Receba com amor</h4>
                     <p class="como-funciona-text">Sua peça chega embalada com todo cuidado, pronta pra encantar.</p>
@@ -573,11 +582,11 @@
     </section>
 
     <!-- Depoimentos Section -->
-    <section class="depoimentos" id="depoimentos">
+    <section class="depoimentos" id="depoimentos" data-animate="reveal">
         <div class="container">
             <div class="section-header">
                 <span class="section-eyebrow" aria-hidden="true">✦</span>
-                <h2 class="section-title">Clientes apaixonados</h2>
+                <h2 class="section-title">Clientes</h2>
             </div>
             <div class="depoimentos-grid">
                 <article class="depoimento-card">
@@ -623,7 +632,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq" id="faq">
+    <section class="faq" id="faq" data-animate="reveal">
         <div class="container">
             <div class="section-header">
                 <span class="section-eyebrow" aria-hidden="true">✦</span>
@@ -654,7 +663,7 @@
                         <span class="faq-sign" aria-hidden="true">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Pix, cartão ou o que for melhor pra você. Peças sob encomenda pedem um sinal para reservar seu lugar na fila.</p>
+                        <p>Pix. Peças sob encomenda pedem um sinal para reservar seu lugar na fila.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -663,7 +672,7 @@
                         <span class="faq-sign" aria-hidden="true">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Sim! Enviamos pelos Correios com código de rastreio. Retirada também é possível na região de Campinas/SP.</p>
+                        <p>Sim! Enviamos pelos Correios com código de rastreio. Retirada também é possível na região de Piracicaba/SP.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -680,7 +689,7 @@
     </section>
 
     <!-- Contato Section -->
-    <section class="contato" id="contato">
+    <section class="contato" id="contato" data-animate="reveal">
         <div class="container">
             <div class="contato-grid">
                 <div class="contato-cta">
@@ -688,7 +697,7 @@
                     <h3 class="contato-cta-title">Fale agora pelo WhatsApp</h3>
                     <p class="contato-cta-text">O jeito mais rápido de tirar dúvidas e encomendar sua peça personalizada.</p>
                     <a href="https://wa.me/5519999669311?text=Oii%21%20Quero%20fazer%20uma%20encomenda%20personalizada.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-inverse contato-cta-button">
-                        <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        <span class="whatsapp-icon" aria-hidden="true">📱</span>
                         Chamar no WhatsApp
                     </a>
                 </div>
@@ -717,8 +726,7 @@
                     <div class="info-card">
                         <div class="info-icon">⏰</div>
                         <h3 class="info-title">Atendimento</h3>
-                        <p class="info-text">Seg–Sex: 9h às 18h</p>
-                        <p class="info-text">Sábado: 9h às 13h</p>
+                        <p class="info-text">Todos os dias</p>
                     </div>
                 </div>
             </div>
@@ -1048,6 +1056,38 @@
                         if (sign) sign.textContent = '–';
                     }
                 });
+            });
+        })();
+
+        // Loader and reveal animations
+        (function setupLoaderAndReveal() {
+            const loaderScreen = document.getElementById('loaderScreen');
+            const revealElements = document.querySelectorAll('[data-animate="reveal"]');
+
+            function showVisible(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }
+
+            const observer = new IntersectionObserver(showVisible, {
+                root: null,
+                rootMargin: '0px 0px -10% 0px',
+                threshold: 0.12
+            });
+
+            revealElements.forEach(el => {
+                observer.observe(el);
+            });
+
+            window.addEventListener('load', function() {
+                setTimeout(() => {
+                    if (loaderScreen) {
+                        loaderScreen.classList.add('hidden');
+                    }
+                }, 2500);
             });
         })();
     </script>
